@@ -1,3 +1,6 @@
+/**
+ * @author: Rachel Lee, Dwij Gandhi, Kevin Luk
+ */
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
