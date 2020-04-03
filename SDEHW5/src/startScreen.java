@@ -1,3 +1,6 @@
+/**
+ * @author: Rachel Lee, Dwij Gandhi, Kevin Luk
+ */
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -11,7 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class startScreen extends Application {
-
+    //hi
     Label placeHolder;
     public static void main(String[] args){
         launch(args);
