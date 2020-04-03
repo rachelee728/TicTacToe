@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71f45791-daf5-447c-8434-1997b0cd6d11" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="71f45791-daf5-447c-8434-1997b0cd6d11" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,5 +41,9 @@
       <screen x="0" y="23" width="1440" height="815" />
     </state>
     <state x="208" y="23" key="SettingsEditor/0.23.1440.815/1440.23.1920.1057@0.23.1440.815" timestamp="1585621494839" />
+    <state x="399" y="263" key="com.intellij.ide.util.TipDialog" timestamp="1585673188270">
+      <screen x="0" y="23" width="1440" height="815" />
+    </state>
+    <state x="399" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.815/1440.23.1920.1057@0.23.1440.815" timestamp="1585673188270" />
   </component>
 </project>
