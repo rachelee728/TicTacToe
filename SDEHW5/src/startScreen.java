@@ -21,9 +21,11 @@ public class startScreen extends Application {
         placeHolder = new Label("");
         placeHolder.setVisible(false);
 
+        // player vs. cpu
         Button button1 = new Button();
         button1.setText("1-player mode");
 
+        // player vs. player
         Button button2 = new Button();
         button2.setText("2-player mode");
 
