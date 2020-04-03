@@ -8,7 +8,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
 public class startScreen extends Application {
-
+    //hi
     Label placeHolder;
     public static void main(String[] args){
         launch(args);
