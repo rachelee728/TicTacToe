@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71f45791-daf5-447c-8434-1997b0cd6d11" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StandardBoard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/startScreen$ButtonHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/startScreen$ButtonHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/startScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/startScreen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/startScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +15,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -68,7 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585621432942</updated>
       <workItem from="1586036183228" duration="198000" />
-      <workItem from="1586051386327" duration="1342000" />
+      <workItem from="1586051386327" duration="3533000" />
     </task>
     <servers />
   </component>

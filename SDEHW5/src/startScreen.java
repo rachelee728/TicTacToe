@@ -22,7 +22,6 @@ public class startScreen extends Application {
     RadioButton standardMode;
     RadioButton scoreModeButton;
 
-
     public static void main(String[] args){
         launch(args);
     }
@@ -41,6 +40,7 @@ public class startScreen extends Application {
         ToggleGroup playerModes = new ToggleGroup();
         ToggleGroup scoreModes = new ToggleGroup();
 
+        // create widgets to be displayed on screen
         player1 = new RadioButton("1-player mode");
         player2 = new RadioButton("2-player mode");
         standardMode = new RadioButton("Standard mode"); //win when get 4 in a row
@@ -48,7 +48,7 @@ public class startScreen extends Application {
 
         Button startButton = new Button("Start");
 
-
+        // create scene to display widgets
         GridPane root = new GridPane();
         root.setHgap(10);
         root.setVgap(10);
@@ -57,6 +57,7 @@ public class startScreen extends Application {
         root.add(playerMode,0,2);
         root.add(scoreMode,3,2);
 
+        // add radio button to group
         player1.setToggleGroup(playerModes);
         player2.setToggleGroup(playerModes);
         standardMode.setToggleGroup(scoreModes);
