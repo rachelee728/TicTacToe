@@ -71,11 +71,11 @@ public class startScreen extends Application {
         root.add(placeHolder, 0, 6);
         root.add(standardMode,3,3);
         root.add(scoreModeButton,3,5);
-        root.add(startButton,5,6);
+        root.add(startButton,1,7);
 
         startButton.setOnAction(new ButtonHandler());
 
-        primaryStage.setScene(new Scene(root, 500, 500));
+        primaryStage.setScene(new Scene(root, 400, 200));
         primaryStage.show();
     }
 
