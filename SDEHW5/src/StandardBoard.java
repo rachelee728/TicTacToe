@@ -21,6 +21,6 @@ public class StandardBoard {
 
     @FXML
     protected void handleButton(ActionEvent e) {
-
+        turns.setText("hello");
     }
 }
