@@ -7,42 +7,84 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class startScreen extends Application {
 
     Label placeHolder;
+    RadioButton player1;
+    RadioButton player2;
+    RadioButton standardMode;
+    RadioButton scoreModeButton;
+
     public static void main(String[] args){
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("TicTacToe!!!1");
+        primaryStage.setTitle("TicTacToe!!!");
+
+        Label label1 = new Label("Select player mode/game mode");
+        Label playerMode = new Label("Player Modes");
+        Label scoreMode = new Label("Score Modes");
 
         placeHolder = new Label("");
         placeHolder.setVisible(false);
 
-        Button button1 = new Button();
-        button1.setText("1-player mode");
+        ToggleGroup playerModes = new ToggleGroup();
+        ToggleGroup scoreModes = new ToggleGroup();
 
-        Button button2 = new Button();
-        button2.setText("2-player mode");
+        // create widgets to be displayed on screen
+        player1 = new RadioButton("1-player mode");
+        player2 = new RadioButton("2-player mode");
+        standardMode = new RadioButton("Standard mode"); //win when get 4 in a row
+        scoreModeButton = new RadioButton("Score mode"); //win when the board is all full--compare b/t players
 
-        Button button3 = new Button();
-        button3.setText("Standard mode");
+        Button startButton = new Button("Start");
 
-        Button button4 = new Button();
-        button4.setText("Start");
-        button4.setOnAction(new ButtonHandler());
+        // create scene to display widgets
+        GridPane root = new GridPane();
+        root.setHgap(10);
+        root.setVgap(10);
 
-        FlowPane root = new FlowPane();
-        root.getChildren().add(button1);
-        root.getChildren().add(button2);
-        root.getChildren().add(button3);
-        root.getChildren().add(button4);
-        primaryStage.setScene(new Scene(root, 500, 500));
+        root.add(label1,0,0);
+        root.add(playerMode,0,2);
+        root.add(scoreMode,3,2);
+
+        // add radio button to group
+        player1.setToggleGroup(playerModes);
+        player2.setToggleGroup(playerModes);
+        standardMode.setToggleGroup(scoreModes);
+        //standardMode.setOnAction(new ButtonHandler());
+        scoreModeButton.setToggleGroup(scoreModes);
+        //scoreModeButton.setOnAction(new ButtonHandler());
+
+        // display widgets
+        root.add(player1,0,3);
+        root.add(player2,0,5);
+        root.add(placeHolder, 0, 6);
+        root.add(standardMode,3,3);
+        root.add(scoreModeButton,3,5);
+        root.add(startButton,1,7);
+
+        //startButton.setOnAction(new ButtonHandler());
+
+        StandardApp standard = new StandardApp();
+        standard.start(primaryStage);
+
+//        if (player1.isSelected() && standardMode.isSelected()) {
+//            startButton.setOnAction(e -> primaryStage.setScene(standard.scene));
+//        }
+
+        startButton.setOnAction(e -> primaryStage.setScene(standard.scene));
+
+        primaryStage.setScene(new Scene(root, 400, 200));
         primaryStage.show();
     }
 
@@ -50,8 +92,23 @@ public class startScreen extends Application {
 
         @Override
         public void handle(ActionEvent actionEvent) {
-            placeHolder.setVisible(true);
-            placeHolder.setText("You have pressed the button");
+            if(player1.isSelected() && standardMode.isSelected()) {
+
+            }
+            else if(player1.isSelected() && scoreModeButton.isSelected()) {
+
+            }
+            else if(player2.isSelected() && standardMode.isSelected()) {
+
+            }
+            else if(player2.isSelected() && scoreModeButton.isSelected()) {
+
+            }
+            else {
+                placeHolder.setText("You didn't pick two options!");
+                placeHolder.setTextFill(Color.RED);
+                placeHolder.setVisible(true);
+            }
         }
     }
 }
