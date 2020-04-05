@@ -11,11 +11,18 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class startScreen extends Application {
-    //hi
+
     Label placeHolder;
+    RadioButton player1;
+    RadioButton player2;
+    RadioButton standardMode;
+    RadioButton scoreModeButton;
+
+
     public static void main(String[] args){
         launch(args);
     }
@@ -28,13 +35,16 @@ public class startScreen extends Application {
         Label playerMode = new Label("Player Modes");
         Label scoreMode = new Label("Score Modes");
 
+        placeHolder = new Label("");
+        placeHolder.setVisible(false);
+
         ToggleGroup playerModes = new ToggleGroup();
         ToggleGroup scoreModes = new ToggleGroup();
 
-        RadioButton player1 = new RadioButton("1-player mode");
-        RadioButton player2 = new RadioButton("2-player mode");
-        RadioButton standardMode = new RadioButton("Standard mode"); //win when get 4 in a row
-        RadioButton scoreModeButton = new RadioButton("Score mode"); //win when the board is all full--compare b/t players
+        player1 = new RadioButton("1-player mode");
+        player2 = new RadioButton("2-player mode");
+        standardMode = new RadioButton("Standard mode"); //win when get 4 in a row
+        scoreModeButton = new RadioButton("Score mode"); //win when the board is all full--compare b/t players
 
         Button startButton = new Button("Start");
 
@@ -54,8 +64,10 @@ public class startScreen extends Application {
         scoreModeButton.setToggleGroup(scoreModes);
         scoreModeButton.setOnAction(new ButtonHandler());
 
+        // display widgets
         root.add(player1,0,3);
         root.add(player2,0,5);
+        root.add(placeHolder, 0, 6);
         root.add(standardMode,3,3);
         root.add(scoreModeButton,3,5);
         root.add(startButton,5,6);
@@ -70,7 +82,23 @@ public class startScreen extends Application {
 
         @Override
         public void handle(ActionEvent actionEvent) {
-            
+            if(player1.isSelected() && standardMode.isSelected()) {
+
+            }
+            else if(player1.isSelected() && scoreModeButton.isSelected()) {
+
+            }
+            else if(player2.isSelected() && standardMode.isSelected()) {
+
+            }
+            else if(player2.isSelected() && scoreModeButton.isSelected()) {
+
+            }
+            else {
+                placeHolder.setText("You didn't pick two options!");
+                placeHolder.setTextFill(Color.RED);
+                placeHolder.setVisible(true);
+            }
         }
     }
 }
