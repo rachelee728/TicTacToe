@@ -2,11 +2,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.CornerRadii;
 
-public class StandardBoard {
+import java.awt.*;
+
+public class ScoreBoard {
 
     int moves = 0;
-
     @FXML
     Button oneZeroButton, twoZeroButton, threeZeroButton, fourZeroButton, fiveZeroButton;
     @FXML
@@ -46,4 +49,3 @@ public class StandardBoard {
 
     }
 }
-

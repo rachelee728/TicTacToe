@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -21,6 +20,7 @@ public class startScreen extends Application {
     RadioButton player2;
     RadioButton standardMode;
     RadioButton scoreModeButton;
+    Stage stage;
 
     public static void main(String[] args){
         launch(args);
@@ -28,6 +28,8 @@ public class startScreen extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        
+        stage = primaryStage;
         primaryStage.setTitle("TicTacToe!!!");
 
         Label label1 = new Label("Select player mode/game mode");
@@ -73,16 +75,7 @@ public class startScreen extends Application {
         root.add(scoreModeButton,3,5);
         root.add(startButton,1,7);
 
-        //startButton.setOnAction(new ButtonHandler());
-
-        StandardApp standard = new StandardApp();
-        standard.start(primaryStage);
-
-//        if (player1.isSelected() && standardMode.isSelected()) {
-//            startButton.setOnAction(e -> primaryStage.setScene(standard.scene));
-//        }
-
-        startButton.setOnAction(e -> primaryStage.setScene(standard.scene));
+        startButton.setOnAction(new ButtonHandler());
 
         primaryStage.setScene(new Scene(root, 400, 200));
         primaryStage.show();
@@ -92,17 +85,21 @@ public class startScreen extends Application {
 
         @Override
         public void handle(ActionEvent actionEvent) {
-            if(player1.isSelected() && standardMode.isSelected()) {
 
+            StandardApp standard = new StandardApp();
+            ScoreApp scored = new ScoreApp();
+
+            if(player1.isSelected() && standardMode.isSelected()) {
+                stage.setScene(standard.scene);
             }
             else if(player1.isSelected() && scoreModeButton.isSelected()) {
-
+                stage.setScene(scored.scene);
             }
             else if(player2.isSelected() && standardMode.isSelected()) {
-
+                stage.setScene(standard.scene);
             }
             else if(player2.isSelected() && scoreModeButton.isSelected()) {
-
+                stage.setScene(scored.scene);
             }
             else {
                 placeHolder.setText("You didn't pick two options!");
