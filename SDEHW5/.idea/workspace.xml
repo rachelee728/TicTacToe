@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="71f45791-daf5-447c-8434-1997b0cd6d11" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 25e7a3a39aa6b31e8dc6471444c19de5d6816239
       <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -21,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/startScreen$ButtonHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/startScreen$ButtonHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/startScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/startScreen.class" afterDir="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/twoPlayerScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/twoPlayerScore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/twoPlayerStandard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/twoPlayerStandard.class" afterDir="false" />
 =======
@@ -30,6 +34,10 @@
       <change beforePath="$PROJECT_DIR$/src/StandardBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StandardBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/startScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startScreen.java" afterDir="false" />
 >>>>>>> 8cba3fcee2c47d01a705736853152f0d12e4bc48
+=======
+      <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/twoPlayerScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/twoPlayerScore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/twoPlayerStandard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/twoPlayerStandard.class" afterDir="false" />
+>>>>>>> 25e7a3a39aa6b31e8dc6471444c19de5d6816239
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,8 +104,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585621432942</updated>
+<<<<<<< HEAD
       <workItem from="1586235044005" duration="792000" />
       <workItem from="1586293393866" duration="1222000" />
+=======
+      <workItem from="1586036183228" duration="198000" />
+      <workItem from="1586051386327" duration="3651000" />
+      <workItem from="1586055989335" duration="20000" />
+      <workItem from="1586056056254" duration="441000" />
+      <workItem from="1586056499575" duration="2435000" />
+      <workItem from="1586120783684" duration="603000" />
+      <workItem from="1586198504991" duration="601000" />
+>>>>>>> 25e7a3a39aa6b31e8dc6471444c19de5d6816239
     </task>
     <servers />
   </component>
@@ -105,6 +123,7 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="97" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586235187064">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -120,11 +139,25 @@
     </state>
     <state x="232" y="5" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1586235168412" />
     <state width="1281" height="2" key="GridCell.Tab.0.bottom" timestamp="1586294616253">
+=======
+    <state x="97" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586120932034">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="97" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1586059537123" />
+    <state x="97" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1586120932034" />
+    <state x="448" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586120809545">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="448" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1586059447627" />
+    <state x="448" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1586120809545" />
+    <state x="408" y="82" key="FileChooserDialogImpl" timestamp="1586120845114">
+>>>>>>> 25e7a3a39aa6b31e8dc6471444c19de5d6816239
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1281" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586294616253" />
 =======
     <state x="408" y="82" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1586059494905" />
+<<<<<<< HEAD
     <state x="408" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1586036243164" />
     <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1586276664911">
       <screen x="1440" y="23" width="1920" height="1057" />
@@ -134,9 +167,18 @@
 >>>>>>> 8cba3fcee2c47d01a705736853152f0d12e4bc48
     <state width="1398" height="9" key="GridCell.Tab.0.bottom/0.23.1440.817/1440.23.1920.1057@0.23.1440.817" timestamp="1586120082882" />
     <state width="1877" height="9" key="GridCell.Tab.0.bottom/0.23.1440.817/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586120872546" />
+=======
+    <state x="408" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1586120845114" />
+    <state width="1281" height="2" key="GridCell.Tab.0.bottom" timestamp="1586121386498">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="143" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1586118652994" />
+    <state width="1281" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586121386498" />
+>>>>>>> 25e7a3a39aa6b31e8dc6471444c19de5d6816239
     <state width="1398" height="96" key="GridCell.Tab.0.bottom/0.23.1440.821/1440.23.1920.1057@0.23.1440.821" timestamp="1585948555383" />
     <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.23.1440.821/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586276664911" />
     <state width="1398" height="10" key="GridCell.Tab.0.bottom/0.23.1440.822/1440.23.1920.1057@0.23.1440.822" timestamp="1585953135328" />
+<<<<<<< HEAD
     <state width="1877" height="9" key="GridCell.Tab.0.bottom/0.23.1440.822/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586125740300" />
     <state width="1877" height="2" key="GridCell.Tab.0.bottom/0.23.1440.823/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586126511161" />
 <<<<<<< HEAD
@@ -155,9 +197,17 @@
 >>>>>>> 8cba3fcee2c47d01a705736853152f0d12e4bc48
     <state width="1398" height="9" key="GridCell.Tab.0.center/0.23.1440.817/1440.23.1920.1057@0.23.1440.817" timestamp="1586120082881" />
     <state width="1877" height="9" key="GridCell.Tab.0.center/0.23.1440.817/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586120872544" />
+=======
+    <state width="1281" height="2" key="GridCell.Tab.0.center" timestamp="1586121386497">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="143" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1586118652994" />
+    <state width="1281" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586121386497" />
+>>>>>>> 25e7a3a39aa6b31e8dc6471444c19de5d6816239
     <state width="1398" height="96" key="GridCell.Tab.0.center/0.23.1440.821/1440.23.1920.1057@0.23.1440.821" timestamp="1585948555376" />
     <state width="1878" height="290" key="GridCell.Tab.0.center/0.23.1440.821/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586276664910" />
     <state width="1398" height="10" key="GridCell.Tab.0.center/0.23.1440.822/1440.23.1920.1057@0.23.1440.822" timestamp="1585953135325" />
+<<<<<<< HEAD
     <state width="1877" height="9" key="GridCell.Tab.0.center/0.23.1440.822/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586125740297" />
     <state width="1877" height="2" key="GridCell.Tab.0.center/0.23.1440.823/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586126511159" />
 <<<<<<< HEAD
@@ -176,9 +226,17 @@
 >>>>>>> 8cba3fcee2c47d01a705736853152f0d12e4bc48
     <state width="1398" height="9" key="GridCell.Tab.0.left/0.23.1440.817/1440.23.1920.1057@0.23.1440.817" timestamp="1586120082880" />
     <state width="1877" height="9" key="GridCell.Tab.0.left/0.23.1440.817/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586120872543" />
+=======
+    <state width="1281" height="2" key="GridCell.Tab.0.left" timestamp="1586121386497">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="143" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1586118652994" />
+    <state width="1281" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586121386497" />
+>>>>>>> 25e7a3a39aa6b31e8dc6471444c19de5d6816239
     <state width="1398" height="96" key="GridCell.Tab.0.left/0.23.1440.821/1440.23.1920.1057@0.23.1440.821" timestamp="1585948555374" />
     <state width="1878" height="290" key="GridCell.Tab.0.left/0.23.1440.821/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586276664910" />
     <state width="1398" height="10" key="GridCell.Tab.0.left/0.23.1440.822/1440.23.1920.1057@0.23.1440.822" timestamp="1585953135324" />
+<<<<<<< HEAD
     <state width="1877" height="9" key="GridCell.Tab.0.left/0.23.1440.822/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586125740297" />
     <state width="1877" height="2" key="GridCell.Tab.0.left/0.23.1440.823/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586126511158" />
 <<<<<<< HEAD
@@ -205,6 +263,17 @@
 <<<<<<< HEAD
     <state width="1877" height="2" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1920.989@1440.23.1920.989" timestamp="1586126530197" />
     <state x="185" y="0" width="1024" height="817" key="SettingsEditor" timestamp="1586235173601">
+=======
+    <state width="1281" height="2" key="GridCell.Tab.0.right" timestamp="1586121386497">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="143" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1586118652994" />
+    <state width="1281" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586121386497" />
+    <state width="1398" height="96" key="GridCell.Tab.0.right/0.23.1440.821/1440.23.1920.1057@0.23.1440.821" timestamp="1585948555378" />
+    <state width="1877" height="290" key="GridCell.Tab.0.right/0.23.1440.821/1440.23.1920.1057@1440.23.1920.1057" timestamp="1585947995163" />
+    <state width="1398" height="10" key="GridCell.Tab.0.right/0.23.1440.822/1440.23.1920.1057@0.23.1440.822" timestamp="1585953135327" />
+    <state x="185" y="0" key="SettingsEditor" timestamp="1586120850334">
+>>>>>>> 25e7a3a39aa6b31e8dc6471444c19de5d6816239
       <screen x="0" y="0" width="1280" height="680" />
 =======
     <state width="1877" height="2" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1920.989@1440.23.1920.989" timestamp="1586128041001" />
@@ -212,6 +281,7 @@
       <screen x="1440" y="23" width="1920" height="1057" />
 >>>>>>> 8cba3fcee2c47d01a705736853152f0d12e4bc48
     </state>
+<<<<<<< HEAD
     <state x="185" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1586235173601" />
     <state x="208" y="23" key="SettingsEditor/0.23.1440.815/1440.23.1920.1057@0.23.1440.815" timestamp="1585621494839" />
     <state x="208" y="23" width="1024" height="817" key="SettingsEditor/0.23.1440.817/1440.23.1920.1057@0.23.1440.817" timestamp="1586119610766" />
@@ -221,6 +291,16 @@
     </state>
     <state x="355" y="200" key="com.intellij.ide.util.TipDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1586120997720" />
     <state x="355" y="200" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1586105769765" />
+=======
+    <state x="185" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1586059497982" />
+    <state x="185" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1586120850334" />
+    <state x="208" y="23" key="SettingsEditor/0.23.1440.815/1440.23.1920.1057@0.23.1440.815" timestamp="1585621494839" />
+    <state x="355" y="200" key="com.intellij.ide.util.TipDialog" timestamp="1586198505116">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="355" y="200" key="com.intellij.ide.util.TipDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1586109151843" />
+    <state x="355" y="200" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1586198505116" />
+>>>>>>> 25e7a3a39aa6b31e8dc6471444c19de5d6816239
     <state x="399" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.815/1440.23.1920.1057@0.23.1440.815" timestamp="1585673188270" />
     <state x="398" y="264" key="com.intellij.ide.util.TipDialog/0.23.1440.817/1440.23.1920.1057@0.23.1440.817" timestamp="1586119458290" />
     <state x="2112" y="418" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1586127758926">
