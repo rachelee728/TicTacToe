@@ -12,6 +12,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.jetbrains.annotations.NotNull;
 
 public class startScreen extends Application {
 
@@ -27,8 +28,8 @@ public class startScreen extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        
+    public void start(@NotNull Stage primaryStage) throws Exception {
+
         stage = primaryStage;
         primaryStage.setTitle("TicTacToe!!!");
 

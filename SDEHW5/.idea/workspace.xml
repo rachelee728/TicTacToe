@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71f45791-daf5-447c-8434-1997b0cd6d11" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ScoreApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ScoreBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ScoreBoard/ScoreBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/StandardBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/StandardBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/StandardBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/StandardBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDEHW5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SDEHW5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/ScoreBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/ScoreBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/ScoreBoard/ScoreBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/ScoreBoard/ScoreBoard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/startScreen$ButtonHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/startScreen$ButtonHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SDEHW5/startScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SDEHW5/startScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StandardBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/StandardBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StandardBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StandardBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScoreBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoreBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScoreBoard/ScoreBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoreBoard/ScoreBoard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/startScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +38,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -81,7 +81,7 @@
       <screen x="0" y="23" width="1440" height="817" />
     </state>
     <state x="570" y="327" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1440.817/1440.23.1920.1057@0.23.1440.817" timestamp="1586119573695" />
-    <state width="1877" height="2" key="GridCell.Tab.0.bottom" timestamp="1586126530198">
+    <state width="1877" height="2" key="GridCell.Tab.0.bottom" timestamp="1586128041001">
       <screen x="1440" y="23" width="1920" height="989" />
     </state>
     <state width="1398" height="9" key="GridCell.Tab.0.bottom/0.23.1440.817/1440.23.1920.1057@0.23.1440.817" timestamp="1586120082882" />
@@ -91,8 +91,8 @@
     <state width="1398" height="9" key="GridCell.Tab.0.bottom/0.23.1440.822/1440.23.1920.1057@0.23.1440.822" timestamp="1586120108946" />
     <state width="1877" height="9" key="GridCell.Tab.0.bottom/0.23.1440.822/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586125740300" />
     <state width="1877" height="2" key="GridCell.Tab.0.bottom/0.23.1440.823/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586126511161" />
-    <state width="1877" height="2" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.23.1920.989@1440.23.1920.989" timestamp="1586126530198" />
-    <state width="1877" height="2" key="GridCell.Tab.0.center" timestamp="1586126530196">
+    <state width="1877" height="2" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.23.1920.989@1440.23.1920.989" timestamp="1586128041001" />
+    <state width="1877" height="2" key="GridCell.Tab.0.center" timestamp="1586128040998">
       <screen x="1440" y="23" width="1920" height="989" />
     </state>
     <state width="1398" height="9" key="GridCell.Tab.0.center/0.23.1440.817/1440.23.1920.1057@0.23.1440.817" timestamp="1586120082881" />
@@ -102,8 +102,8 @@
     <state width="1398" height="9" key="GridCell.Tab.0.center/0.23.1440.822/1440.23.1920.1057@0.23.1440.822" timestamp="1586120108945" />
     <state width="1877" height="9" key="GridCell.Tab.0.center/0.23.1440.822/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586125740297" />
     <state width="1877" height="2" key="GridCell.Tab.0.center/0.23.1440.823/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586126511159" />
-    <state width="1877" height="2" key="GridCell.Tab.0.center/0.23.1440.877/1440.23.1920.989@1440.23.1920.989" timestamp="1586126530196" />
-    <state width="1877" height="2" key="GridCell.Tab.0.left" timestamp="1586126530195">
+    <state width="1877" height="2" key="GridCell.Tab.0.center/0.23.1440.877/1440.23.1920.989@1440.23.1920.989" timestamp="1586128040998" />
+    <state width="1877" height="2" key="GridCell.Tab.0.left" timestamp="1586128040997">
       <screen x="1440" y="23" width="1920" height="989" />
     </state>
     <state width="1398" height="9" key="GridCell.Tab.0.left/0.23.1440.817/1440.23.1920.1057@0.23.1440.817" timestamp="1586120082880" />
@@ -113,8 +113,8 @@
     <state width="1398" height="9" key="GridCell.Tab.0.left/0.23.1440.822/1440.23.1920.1057@0.23.1440.822" timestamp="1586120108944" />
     <state width="1877" height="9" key="GridCell.Tab.0.left/0.23.1440.822/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586125740297" />
     <state width="1877" height="2" key="GridCell.Tab.0.left/0.23.1440.823/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586126511158" />
-    <state width="1877" height="2" key="GridCell.Tab.0.left/0.23.1440.877/1440.23.1920.989@1440.23.1920.989" timestamp="1586126530195" />
-    <state width="1877" height="2" key="GridCell.Tab.0.right" timestamp="1586126530197">
+    <state width="1877" height="2" key="GridCell.Tab.0.left/0.23.1440.877/1440.23.1920.989@1440.23.1920.989" timestamp="1586128040997" />
+    <state width="1877" height="2" key="GridCell.Tab.0.right" timestamp="1586128041001">
       <screen x="1440" y="23" width="1920" height="989" />
     </state>
     <state width="1398" height="9" key="GridCell.Tab.0.right/0.23.1440.817/1440.23.1920.1057@0.23.1440.817" timestamp="1586120082882" />
@@ -124,7 +124,7 @@
     <state width="1398" height="9" key="GridCell.Tab.0.right/0.23.1440.822/1440.23.1920.1057@0.23.1440.822" timestamp="1586120108945" />
     <state width="1877" height="9" key="GridCell.Tab.0.right/0.23.1440.822/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586125740299" />
     <state width="1877" height="2" key="GridCell.Tab.0.right/0.23.1440.823/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586126511161" />
-    <state width="1877" height="2" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1920.989@1440.23.1920.989" timestamp="1586126530197" />
+    <state width="1877" height="2" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1920.989@1440.23.1920.989" timestamp="1586128041001" />
     <state x="1717" y="23" width="1024" height="817" key="SettingsEditor" timestamp="1586126266084">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
@@ -136,5 +136,9 @@
     </state>
     <state x="399" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.815/1440.23.1920.1057@0.23.1440.815" timestamp="1585673188270" />
     <state x="398" y="264" key="com.intellij.ide.util.TipDialog/0.23.1440.817/1440.23.1920.1057@0.23.1440.817" timestamp="1586119458290" />
+    <state x="2112" y="418" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1586127758926">
+      <screen x="1440" y="23" width="1920" height="989" />
+    </state>
+    <state x="2112" y="418" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1440.877/1440.23.1920.989@1440.23.1920.989" timestamp="1586127758926" />
   </component>
 </project>

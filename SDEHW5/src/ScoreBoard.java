@@ -27,6 +27,7 @@ public class ScoreBoard {
 
     @FXML
     protected void handleButton(ActionEvent e) {
+
         moves += 1;
         Button clicked = (Button) e.getSource();
 
