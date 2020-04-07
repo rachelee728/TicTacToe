@@ -6,11 +6,6 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class StandardBoard {
-
-<<<<<<< HEAD
-=======
-    //Stage stage;
->>>>>>> 99c299a85496c67c4d9eada48bea41c189b9d08f
     int moves = 0;
 
     @FXML
@@ -24,33 +19,9 @@ public class StandardBoard {
     @FXML
     Button oneFourButton, twoFourButton, threeFourButton, fourFourButton, fiveFourButton;
     @FXML
-<<<<<<< HEAD
     Button quit, restart;
     @FXML
     Label turns;
-
-    @FXML
-    protected void handleButton(ActionEvent e) {
-        moves += 1;
-        Button clicked = (Button) e.getSource();
-
-        if(e.getSource() == quit){
-
-        }
-        else if(e.getSource() == restart){
-
-        }
-        else{
-            if (moves % 2 == 0) {
-                clicked.setText("O");
-                turns.setText("Current Turn : X");
-            } else {
-                clicked.setText("X");
-=======
-    Label turns;
-
-    @FXML
-    Button quit, restart;
 
     @FXML
     protected void handleButton(ActionEvent e) throws Exception {
@@ -83,14 +54,11 @@ public class StandardBoard {
                     turns.setText("X Wins!");
                     System.exit(0);
                 }
->>>>>>> 99c299a85496c67c4d9eada48bea41c189b9d08f
+
                 turns.setText("Current Turn: O");
             }
             clicked.setDisable(true);
         }
-<<<<<<< HEAD
-
-=======
         else if (e.getSource() == quit) {
             startScreen backTostart = new startScreen();
             backTostart.start(backTostart.stage);
@@ -98,7 +66,6 @@ public class StandardBoard {
         else {
 
         }
->>>>>>> 99c299a85496c67c4d9eada48bea41c189b9d08f
     }
 
     public boolean winner(String[][] plays, String player) {

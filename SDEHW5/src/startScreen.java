@@ -23,17 +23,12 @@ public class startScreen extends Application {
     RadioButton scoreModeButton;
     Stage stage;
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         launch(args);
     }
 
     @Override
-<<<<<<< HEAD
-    public void start(@NotNull Stage primaryStage) throws Exception {
-
-=======
     public void start(Stage primaryStage) throws Exception {
->>>>>>> 99c299a85496c67c4d9eada48bea41c189b9d08f
         stage = primaryStage;
         primaryStage.setTitle("TicTacToe!!!");
 
@@ -60,9 +55,9 @@ public class startScreen extends Application {
         root.setHgap(10);
         root.setVgap(10);
 
-        root.add(label1,0,0);
-        root.add(playerMode,0,2);
-        root.add(scoreMode,3,2);
+        root.add(label1, 0, 0);
+        root.add(playerMode, 0, 2);
+        root.add(scoreMode, 3, 2);
 
         // add radio button to group
         player1.setToggleGroup(playerModes);
@@ -71,12 +66,12 @@ public class startScreen extends Application {
         scoreModeButton.setToggleGroup(scoreModes);
 
         // display widgets
-        root.add(player1,0,3);
-        root.add(player2,0,5);
+        root.add(player1, 0, 3);
+        root.add(player2, 0, 5);
         root.add(placeHolder, 0, 6);
-        root.add(standardMode,3,3);
-        root.add(scoreModeButton,3,5);
-        root.add(startButton,1,7);
+        root.add(standardMode, 3, 3);
+        root.add(scoreModeButton, 3, 5);
+        root.add(startButton, 1, 7);
 
         startButton.setOnAction(new ButtonHandler());
 
@@ -89,32 +84,25 @@ public class startScreen extends Application {
         public void handle(ActionEvent actionEvent) {
 
             StandardApp standard = new StandardApp();
-<<<<<<< HEAD
             ScoreApp scored = new ScoreApp();
-=======
             try {
                 standard.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
-            }
->>>>>>> 99c299a85496c67c4d9eada48bea41c189b9d08f
 
-            if(player1.isSelected() && standardMode.isSelected()) {
-                stage.setScene(standard.scene);
-            }
-            else if(player1.isSelected() && scoreModeButton.isSelected()) {
-                stage.setScene(scored.scene);
-            }
-            else if(player2.isSelected() && standardMode.isSelected()) {
-                stage.setScene(standard.scene);
-            }
-            else if(player2.isSelected() && scoreModeButton.isSelected()) {
-                stage.setScene(scored.scene);
-            }
-            else {
-                placeHolder.setText("You didn't pick two options!");
-                placeHolder.setTextFill(Color.RED);
-                placeHolder.setVisible(true);
+                if (player1.isSelected() && standardMode.isSelected()) {
+                    stage.setScene(standard.scene);
+                } else if (player1.isSelected() && scoreModeButton.isSelected()) {
+                    stage.setScene(scored.scene);
+                } else if (player2.isSelected() && standardMode.isSelected()) {
+                    stage.setScene(standard.scene);
+                } else if (player2.isSelected() && scoreModeButton.isSelected()) {
+                    stage.setScene(scored.scene);
+                } else {
+                    placeHolder.setText("You didn't pick two options!");
+                    placeHolder.setTextFill(Color.RED);
+                    placeHolder.setVisible(true);
+                }
             }
         }
     }
