@@ -12,6 +12,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.jetbrains.annotations.NotNull;
 
 public class startScreen extends Application {
 
@@ -22,13 +23,12 @@ public class startScreen extends Application {
     RadioButton scoreModeButton;
     Stage stage;
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        
         stage = primaryStage;
         primaryStage.setTitle("TicTacToe!!!");
 
@@ -55,25 +55,23 @@ public class startScreen extends Application {
         root.setHgap(10);
         root.setVgap(10);
 
-        root.add(label1,0,0);
-        root.add(playerMode,0,2);
-        root.add(scoreMode,3,2);
+        root.add(label1, 0, 0);
+        root.add(playerMode, 0, 2);
+        root.add(scoreMode, 3, 2);
 
         // add radio button to group
         player1.setToggleGroup(playerModes);
         player2.setToggleGroup(playerModes);
         standardMode.setToggleGroup(scoreModes);
-        //standardMode.setOnAction(new ButtonHandler());
         scoreModeButton.setToggleGroup(scoreModes);
-        //scoreModeButton.setOnAction(new ButtonHandler());
 
         // display widgets
-        root.add(player1,0,3);
-        root.add(player2,0,5);
+        root.add(player1, 0, 3);
+        root.add(player2, 0, 5);
         root.add(placeHolder, 0, 6);
-        root.add(standardMode,3,3);
-        root.add(scoreModeButton,3,5);
-        root.add(startButton,1,7);
+        root.add(standardMode, 3, 3);
+        root.add(scoreModeButton, 3, 5);
+        root.add(startButton, 1, 7);
 
         startButton.setOnAction(new ButtonHandler());
 
@@ -82,29 +80,29 @@ public class startScreen extends Application {
     }
 
     private class ButtonHandler implements EventHandler<ActionEvent> {
-
         @Override
         public void handle(ActionEvent actionEvent) {
 
             StandardApp standard = new StandardApp();
             ScoreApp scored = new ScoreApp();
+            try {
+                standard.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
 
-            if(player1.isSelected() && standardMode.isSelected()) {
-                stage.setScene(standard.scene);
-            }
-            else if(player1.isSelected() && scoreModeButton.isSelected()) {
-                stage.setScene(scored.scene);
-            }
-            else if(player2.isSelected() && standardMode.isSelected()) {
-                stage.setScene(standard.scene);
-            }
-            else if(player2.isSelected() && scoreModeButton.isSelected()) {
-                stage.setScene(scored.scene);
-            }
-            else {
-                placeHolder.setText("You didn't pick two options!");
-                placeHolder.setTextFill(Color.RED);
-                placeHolder.setVisible(true);
+                if (player1.isSelected() && standardMode.isSelected()) {
+                    stage.setScene(standard.scene);
+                } else if (player1.isSelected() && scoreModeButton.isSelected()) {
+                    stage.setScene(scored.scene);
+                } else if (player2.isSelected() && standardMode.isSelected()) {
+                    stage.setScene(standard.scene);
+                } else if (player2.isSelected() && scoreModeButton.isSelected()) {
+                    stage.setScene(scored.scene);
+                } else {
+                    placeHolder.setText("You didn't pick two options!");
+                    placeHolder.setTextFill(Color.RED);
+                    placeHolder.setVisible(true);
+                }
             }
         }
     }
