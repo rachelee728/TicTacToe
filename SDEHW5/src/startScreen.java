@@ -28,8 +28,12 @@ public class startScreen extends Application {
     }
 
     @Override
+<<<<<<< HEAD
     public void start(@NotNull Stage primaryStage) throws Exception {
 
+=======
+    public void start(Stage primaryStage) throws Exception {
+>>>>>>> 99c299a85496c67c4d9eada48bea41c189b9d08f
         stage = primaryStage;
         primaryStage.setTitle("TicTacToe!!!");
 
@@ -64,9 +68,7 @@ public class startScreen extends Application {
         player1.setToggleGroup(playerModes);
         player2.setToggleGroup(playerModes);
         standardMode.setToggleGroup(scoreModes);
-        //standardMode.setOnAction(new ButtonHandler());
         scoreModeButton.setToggleGroup(scoreModes);
-        //scoreModeButton.setOnAction(new ButtonHandler());
 
         // display widgets
         root.add(player1,0,3);
@@ -83,12 +85,19 @@ public class startScreen extends Application {
     }
 
     private class ButtonHandler implements EventHandler<ActionEvent> {
-
         @Override
         public void handle(ActionEvent actionEvent) {
 
             StandardApp standard = new StandardApp();
+<<<<<<< HEAD
             ScoreApp scored = new ScoreApp();
+=======
+            try {
+                standard.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+>>>>>>> 99c299a85496c67c4d9eada48bea41c189b9d08f
 
             if(player1.isSelected() && standardMode.isSelected()) {
                 stage.setScene(standard.scene);
