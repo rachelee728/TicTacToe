@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class onePlayerStandard {
@@ -43,7 +44,7 @@ public class onePlayerStandard {
             int x = GridPane.getRowIndex(clicked);
             int y = GridPane.getColumnIndex(clicked);
 
-            if (moves % 2 != 0) {
+            if (moves != 13) {
                 plays[x-1][y] = "X";
                 clicked.setText("X");
                 if (winner(plays, "X")) {
@@ -52,6 +53,20 @@ public class onePlayerStandard {
                 }
                 turns.setText("Current Turn: O");
                 TimeUnit.SECONDS.sleep(4);
+
+                Random rand = new Random();
+
+                int xRand = rand.nextInt(6);
+                int yRand = rand.nextInt(6);
+                if(plays[xRand][yRand].isEmpty()) {
+                    plays[x-1][y] = "O";
+                    clicked.setText("O");
+                    if (winner(plays, "O")) {
+                        turns.setText("O Wins!");
+                    }
+                    turns.setText("Current Turn: X");
+                }
+
 
             }
             clicked.setDisable(true);
