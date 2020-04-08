@@ -21,6 +21,7 @@ public class startScreen extends Application {
     RadioButton player2;
     RadioButton standardMode;
     RadioButton scoreModeButton;
+    Stage stage;
 
     public static void main(String[] args){
         launch(args);
@@ -28,6 +29,7 @@ public class startScreen extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        stage = primaryStage;
         primaryStage.setTitle("TicTacToe!!!");
 
         Label label1 = new Label("Select player mode/game mode");
@@ -61,9 +63,7 @@ public class startScreen extends Application {
         player1.setToggleGroup(playerModes);
         player2.setToggleGroup(playerModes);
         standardMode.setToggleGroup(scoreModes);
-        //standardMode.setOnAction(new ButtonHandler());
         scoreModeButton.setToggleGroup(scoreModes);
-        //scoreModeButton.setOnAction(new ButtonHandler());
 
         // display widgets
         root.add(player1,0,3);
@@ -73,27 +73,25 @@ public class startScreen extends Application {
         root.add(scoreModeButton,3,5);
         root.add(startButton,1,7);
 
-        //startButton.setOnAction(new ButtonHandler());
-
-        StandardApp standard = new StandardApp();
-        standard.start(primaryStage);
-
-//        if (player1.isSelected() && standardMode.isSelected()) {
-//            startButton.setOnAction(e -> primaryStage.setScene(standard.scene));
-//        }
-
-        startButton.setOnAction(e -> primaryStage.setScene(standard.scene));
+        startButton.setOnAction(new ButtonHandler());
 
         primaryStage.setScene(new Scene(root, 400, 200));
         primaryStage.show();
     }
 
     private class ButtonHandler implements EventHandler<ActionEvent> {
-
         @Override
         public void handle(ActionEvent actionEvent) {
-            if(player1.isSelected() && standardMode.isSelected()) {
 
+            StandardApp standard = new StandardApp();
+            try {
+                standard.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            if(player1.isSelected() && standardMode.isSelected()) {
+                stage.setScene(standard.scene);
             }
             else if(player1.isSelected() && scoreModeButton.isSelected()) {
 
