@@ -1,6 +1,7 @@
 /**
-*@author: Rachel Lee, Dwij Gandhi, Kevin Luk
-*/
+ * @author: Rachel Lee, Dwij Gandhi, Kevin Luk
+ */
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -88,21 +89,20 @@ public class startScreen extends Application {
                 standard.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
-
-                if (player1.isSelected() && standardMode.isSelected()) {
-                    stage.setScene(standard.scene);
-                } else if (player1.isSelected() && scoreModeButton.isSelected()) {
-                    stage.setScene(scored.scene);
-                } else if (player2.isSelected() && standardMode.isSelected()) {
-                    stage.setScene(standard.scene);
-                } else if (player2.isSelected() && scoreModeButton.isSelected()) {
-                    stage.setScene(scored.scene);
-                } else {
-                    placeHolder.setText("You didn't pick two options!");
-                    placeHolder.setTextFill(Color.RED);
-                    placeHolder.setVisible(true);
-                }
             }
-        }
+            if (player1.isSelected() && standardMode.isSelected()) {
+                stage.setScene(standard.scene);
+            } else if (player1.isSelected() && scoreModeButton.isSelected()) {
+                stage.setScene(scored.scene);
+            } else if (player2.isSelected() && standardMode.isSelected()) {
+                stage.setScene(standard.scene);
+            } else if (player2.isSelected() && scoreModeButton.isSelected()) {
+                stage.setScene(scored.scene);
+            } else {
+                placeHolder.setText("You didn't pick two options!");
+                placeHolder.setTextFill(Color.RED);
+                placeHolder.setVisible(true);
+            }
     }
+}
 }

@@ -55,9 +55,8 @@ public class onePlayerStandard {
                 TimeUnit.SECONDS.sleep(4);
 
                 Random rand = new Random();
-
-                int xRand = rand.nextInt(6);
-                int yRand = rand.nextInt(6);
+                int xRand = rand.nextInt(5);
+                int yRand = rand.nextInt(5);
                 if(plays[xRand][yRand].isEmpty()) {
                     plays[x-1][y] = "O";
                     clicked.setText("O");
@@ -82,7 +81,7 @@ public class onePlayerStandard {
 
     public boolean winner(String[][] plays, String player) {
         for (int i = 0; i < 5; i++) {
-            if (plays[i][0].equals(player) && plays[i][1].equals(player) && plays[i][2].equals(player) && plays[i][3].equals(player) && plays[i][4].equals(player)) {
+            if ((plays[i][0].equals(player) || plays[i][4].equals(player)) && plays[i][1].equals(player) && plays[i][2].equals(player) && plays[i][3].equals(player)) {
                 return true;
             }
         }
