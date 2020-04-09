@@ -13,8 +13,8 @@ public class StandardApp extends Application {
         launch(args);
     }
 
-    @Override
-    public void start(Stage stage) throws Exception {
+
+    public void start(Stage stage) throws Exception{
         root = FXMLLoader.load(getClass().getResource("/StandardBoard.fxml"));
         scene = new Scene(root);
         stage.setScene(scene);

@@ -20,9 +20,9 @@ public class startScreen extends Application {
     RadioButton player2;
     RadioButton standardMode;
     RadioButton scoreModeButton;
+    Button startButton;
     Stage stage;
     GridPane root;
-    Button startButton;
 
     public static void main(String[] args){
         launch(args);
@@ -85,15 +85,17 @@ public class startScreen extends Application {
         public void handle(ActionEvent actionEvent) {
 
             StandardApp standard = new StandardApp();
-            try {
-                standard.start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+
 
             if(player1.isSelected() && standardMode.isSelected()) {
-                stage.setScene(standard.scene);
+                //stage.setScene(standard.scene);
+                try {
+                    standard.start(stage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+            
             else if(player1.isSelected() && scoreModeButton.isSelected()) {
 
             }
