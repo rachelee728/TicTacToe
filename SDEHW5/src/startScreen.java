@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -22,6 +21,8 @@ public class startScreen extends Application {
     RadioButton standardMode;
     RadioButton scoreModeButton;
     Stage stage;
+    GridPane root;
+    Button startButton;
 
     public static void main(String[] args){
         launch(args);
@@ -48,10 +49,10 @@ public class startScreen extends Application {
         standardMode = new RadioButton("Standard mode"); //win when get 4 in a row
         scoreModeButton = new RadioButton("Score mode"); //win when the board is all full--compare b/t players
 
-        Button startButton = new Button("Start");
+        startButton = new Button("Start");
 
         // create scene to display widgets
-        GridPane root = new GridPane();
+        root = new GridPane();
         root.setHgap(10);
         root.setVgap(10);
 

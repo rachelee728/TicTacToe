@@ -1,5 +1,7 @@
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -65,7 +67,17 @@ public class StandardBoard {
         Button clicked = (Button) e.getSource();
         StandardBoard stan = new StandardBoard();
 
-        if (!(e.getSource() == quit) || !(e.getSource() == restart)) {
+        if (clicked == quit) {
+            //startScreen backTostart = new startScreen();
+            //backTostart.startButton.getScene();
+        }
+
+        else if (clicked == restart) {
+            moves = 0;
+            startAgain();
+        }
+
+        else {
 
             int x = GridPane.getRowIndex(clicked);
             int y = GridPane.getColumnIndex(clicked);
@@ -91,12 +103,9 @@ public class StandardBoard {
             }
             clicked.setDisable(true);
         }
-        else if (e.getSource() == quit) {
-            startScreen backTostart = new startScreen();
-            backTostart.start(backTostart.stage);
-        }
-        else if (clicked == restart) {
-            startAgain();
+
+        if (moves == 25 && !(winner(plays, "X") || winner(plays, "O"))) {
+            turns.setText("It's a Draw");
         }
     }
 
