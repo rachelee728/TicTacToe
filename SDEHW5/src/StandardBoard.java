@@ -3,7 +3,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
+
 
 public class StandardBoard {
     int moves = 0;
@@ -21,19 +21,27 @@ public class StandardBoard {
     @FXML
     Button quit, restart;
     @FXML
-    Label turns;
+    Label turns, xScore, oScore;
 
-    @FXML
-    protected void handleButton(ActionEvent e) throws Exception {
-        moves += 1;
-        Button clicked = (Button) e.getSource();
+    String[][] plays = new String[5][5];
 
-        String[][] plays = new String[5][5];
+    public void initalize() {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 plays[i][j] = "S";
             }
         }
+    }
+
+    public void enter(int x, int y, String player) {
+        plays[x][y] = player;
+    }
+
+    @FXML
+    protected void handleButton(ActionEvent e) throws Exception {
+        moves += 1;
+        Button clicked = (Button) e.getSource();
+        StandardBoard stan = new StandardBoard();
 
         if (!(e.getSource() == quit) || !(e.getSource() == restart)) {
 
@@ -41,20 +49,18 @@ public class StandardBoard {
             int y = GridPane.getColumnIndex(clicked);
 
             if (moves % 2 == 0) {
-                plays[x-1][y] = "O";
+                enter(x-1, y, "O");
                 clicked.setText("O");
                 if (winner(plays, "O")) {
                     turns.setText("O Wins!");
                 }
                 turns.setText("Current Turn: X");
             } else {
-                plays[x-1][y] = "X";
+                enter(x-1, y, "X");
                 clicked.setText("X");
-                if (winner(plays, "X")) {
+                if (stan.winner(plays, "X")) {
                     turns.setText("X Wins!");
-                    System.exit(0);
                 }
-
                 turns.setText("Current Turn: O");
             }
             clicked.setDisable(true);
@@ -69,13 +75,13 @@ public class StandardBoard {
     }
 
     public boolean winner(String[][] plays, String player) {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < plays.length; i++) {
             if (plays[i][0].equals(player) && plays[i][1].equals(player) && plays[i][2].equals(player) && plays[i][3].equals(player) && plays[i][4].equals(player)) {
                 return true;
             }
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < plays.length; i++) {
             if (plays[0][i].equals(player) && plays[1][i].equals(player) && plays[2][i].equals(player) && plays[3][i].equals(player) && plays[4][i].equals(player)) {
                 return true;
             }

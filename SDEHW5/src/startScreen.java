@@ -12,7 +12,6 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import org.jetbrains.annotations.NotNull;
 
 public class startScreen extends Application {
 
@@ -87,9 +86,10 @@ public class startScreen extends Application {
             ScoreApp scored = new ScoreApp();
             try {
                 standard.start(stage);
+               scored.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
-
+            }
                 if (player1.isSelected() && standardMode.isSelected()) {
                     stage.setScene(standard.scene);
                 } else if (player1.isSelected() && scoreModeButton.isSelected()) {
@@ -106,4 +106,4 @@ public class startScreen extends Application {
             }
         }
     }
-}
+
