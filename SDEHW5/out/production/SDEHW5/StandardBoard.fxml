@@ -21,33 +21,6 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-<<<<<<< HEAD
-       <Button fx:id="oneZeroButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="120.0" text="" GridPane.rowIndex="1" GridPane.columnIndex="0" />
-       <Button fx:id="twoZeroButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="120.0" text="" GridPane.rowIndex="2" GridPane.columnIndex="0" />
-       <Button fx:id="threeZeroButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="120.0" text="" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-       <Button fx:id="fourZeroButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="120.0" text="" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-       <Button fx:id="fiveZeroButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="120.0" text="" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-       <Button fx:id="oneOneButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="72.0" prefWidth="120.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-       <Button fx:id="twoOneButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="72.0" prefWidth="120.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-       <Button fx:id="threeOneButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="72.0" prefWidth="120.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-       <Button fx:id="fourOneButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="72.0" prefWidth="120.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-       <Button fx:id="fiveOneButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="72.0" prefWidth="120.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-       <Button fx:id="oneTwoButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="67.0" prefWidth="121.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-       <Button fx:id="twoTwoButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="67.0" prefWidth="121.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-       <Button fx:id="threeTwoButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="67.0" prefWidth="121.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-       <Button fx:id="fourTwoButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="67.0" prefWidth="121.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-       <Button fx:id="fiveTwoButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="67.0" prefWidth="121.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-       <Button fx:id="oneThreeButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="126.0" text="" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-       <Button fx:id="twoThreeButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="126.0" text="" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-       <Button fx:id="threeThreeButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="126.0" text="" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-       <Button fx:id="fourThreeButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="126.0" text="" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-       <Button fx:id="fiveThreeButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="126.0" text="" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-       <Button fx:id="oneFourButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="65.0" prefWidth="124.0" text="" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-       <Button fx:id="twoFourButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="65.0" prefWidth="124.0" text="" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-       <Button fx:id="threeFourButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="73.0" prefWidth="120.0" text="" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-       <Button fx:id="fourFourButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="65.0" prefWidth="124.0" text="" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-       <Button fx:id="fiveFourButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="75.0" prefWidth="120.0" text="" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-=======
       <Button fx:id="r0c0" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="120.0" text="" GridPane.rowIndex="1" GridPane.columnIndex="0" />
        <Button fx:id="r1c0" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="120.0" text="" GridPane.rowIndex="2" GridPane.columnIndex="0" />
        <Button fx:id="r2c0" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="66.0" prefWidth="120.0" text="" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
@@ -73,7 +46,6 @@
        <Button fx:id="r2c4" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="73.0" prefWidth="120.0" text="" GridPane.columnIndex="4" GridPane.rowIndex="3" />
        <Button fx:id="r3c4" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="65.0" prefWidth="124.0" text="" GridPane.columnIndex="4" GridPane.rowIndex="4" />
        <Button fx:id="r4c4" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="75.0" prefWidth="120.0" text="" GridPane.columnIndex="4" GridPane.rowIndex="5" />
->>>>>>> f745d9130964ede34fc85becdd12b9191400ae78
       <Label fx:id="turns" text="Current Turn : X" GridPane.columnIndex="2" />
       <Button fx:id="quit" mnemonicParsing="false" onAction="#handleButton" text="Quit" GridPane.columnIndex="1" GridPane.rowIndex="6" />
       <Button fx:id="restart" mnemonicParsing="false" onAction="#handleButton" text="Restart" GridPane.columnIndex="3" GridPane.rowIndex="6" />

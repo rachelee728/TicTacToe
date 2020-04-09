@@ -12,32 +12,59 @@ public class onePlayerStandard {
     int moves = 0;
 
     @FXML
-    Button oneZeroButton, twoZeroButton, threeZeroButton, fourZeroButton, fiveZeroButton;
+    Button r0c0, r1c0, r2c0, r3c0, r4c0;
     @FXML
-    Button oneOneButton, twoOneButton, threeOneButton, fourOneButton, fiveOneButton;
+    Button r0c1, r1c1, r2c1, r3c1, r4c1;
     @FXML
-    Button oneTwoButton, twoTwoButton, threeTwoButton, fourTwoButton, fiveTwoButton;
+    Button r0c2, r1c2, r2c2, r3c2, r4c2;
     @FXML
-    Button oneThreeButton, twoThreeButton, threeThreeButton, fourThreeButton, fiveThreeButton;
+    Button r0c3, r1c3, r2c3, r3c3, r4c3;
     @FXML
-    Button oneFourButton, twoFourButton, threeFourButton, fourFourButton, fiveFourButton;
-    @FXML
-    Button quit, restart;
+    Button r0c4, r1c4, r2c4, r3c4, r4c4;
+
     @FXML
     Label turns;
 
     @FXML
-    protected void handleButton(ActionEvent e) throws Exception {
+    Button quit, restart;
 
-        moves += 1;
-        Button clicked = (Button) e.getSource();
+    Button[][] plays = new Button[5][5];
 
-        String[][] plays = new String[5][5];
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                plays[i][j] = "S";
+    public void initialize() {
+        plays[0][0] = r0c0; plays[0][1] = r0c1; plays[0][2] = r0c2; plays[0][3] = r0c3; plays[0][4] = r0c4;
+        plays[1][0] = r1c0; plays[1][1] = r1c1; plays[1][2] = r1c2; plays[1][3] = r1c3; plays[1][4] = r1c4;
+        plays[2][0] = r2c0; plays[2][1] = r2c1; plays[2][2] = r2c2; plays[2][3] = r2c3; plays[2][4] = r2c4;
+        plays[3][0] = r3c0; plays[3][1] = r3c1; plays[3][2] = r3c2; plays[3][3] = r3c3; plays[3][4] = r3c4;
+        plays[4][0] = r4c0; plays[4][1] = r4c1; plays[4][2] = r4c2; plays[4][3] = r4c3; plays[4][4] = r4c4;
+    }
+
+    public void enter(int x, int y, String move) {
+        plays[x][y].setText(move);
+    }
+
+    public void startAgain() {
+        for (int i = 0; i < plays.length; i++) {
+            for (int j = 0; j < plays.length; j++) {
+                plays[i][j].setDisable(false);
+                plays[i][j].setText("");
+                turns.setText("Current Turn: X");
             }
         }
+    }
+
+    public void disable() {
+        for (int i = 0; i < plays.length; i++) {
+            for (int j = 0; j < plays.length; j++) {
+                plays[i][j].setDisable(true);
+            }
+        }
+    }
+
+    @FXML
+    protected void handleButton(ActionEvent e) throws Exception {
+        moves += 1;
+        Button clicked = (Button) e.getSource();
+        StandardBoard stan = new StandardBoard();
 
         if (!(e.getSource() == quit) || !(e.getSource() == restart)) {
 
@@ -45,28 +72,27 @@ public class onePlayerStandard {
             int y = GridPane.getColumnIndex(clicked);
 
             if (moves != 13) {
-                plays[x-1][y] = "X";
-                clicked.setText("X");
+                enter(x-1, y,"O");
+                if (winner(plays, "O")) {
+                    turns.setText("O Wins!");
+                    disable();
+                    return;
+                }
+                turns.setText("Current Turn: X");
+
+                TimeUnit.SECONDS.sleep(4);
+//                Random rand = new Random();
+//                int xRand = rand.nextInt(5);
+//                int yRand = rand.nextInt(5);
+                int xRand = 3;
+                int yRand = 2;
+                enter(xRand-1, yRand, "X");
                 if (winner(plays, "X")) {
                     turns.setText("X Wins!");
-                    System.exit(0);
+                    disable();
+                    return;
                 }
                 turns.setText("Current Turn: O");
-                TimeUnit.SECONDS.sleep(4);
-
-                Random rand = new Random();
-                int xRand = rand.nextInt(5);
-                int yRand = rand.nextInt(5);
-                if(plays[xRand][yRand].isEmpty()) {
-                    plays[x-1][y] = "O";
-                    clicked.setText("O");
-                    if (winner(plays, "O")) {
-                        turns.setText("O Wins!");
-                    }
-                    turns.setText("Current Turn: X");
-                }
-
-
             }
             clicked.setDisable(true);
         }
@@ -74,40 +100,50 @@ public class onePlayerStandard {
             startScreen backTostart = new startScreen();
             backTostart.start(backTostart.stage);
         }
-        else {
-
+        else if (clicked == restart) {
+            startAgain();
         }
     }
 
-    public boolean winner(String[][] plays, String player) {
-        for (int i = 0; i < 5; i++) {
-            if ((plays[i][0].equals(player) || plays[i][4].equals(player)) && plays[i][1].equals(player) && plays[i][2].equals(player) && plays[i][3].equals(player)) {
+    public boolean winner(Button[][] plays, String player) {
+        for (int i = 0; i < plays.length; i++) {
+            if ( (plays[i][0].getText().equals(player) || plays[i][4].getText().equals(player)) && plays[i][1].getText().equals(player)
+                    && plays[i][2].getText().equals(player) && plays[i][3].getText().equals(player)) {
                 return true;
             }
         }
 
-        for (int i = 0; i < 5; i++) {
-            if (plays[0][i].equals(player) && plays[1][i].equals(player) && plays[2][i].equals(player) && plays[3][i].equals(player) && plays[4][i].equals(player)) {
+        for (int i = 0; i < plays.length; i++) {
+            if ((plays[0][i].getText().equals(player) || plays[4][i].getText().equals(player)) && plays[1][i].getText().equals(player)
+                    && plays[2][i].getText().equals(player) && plays[3][i].getText().equals(player)) {
                 return true;
             }
         }
 
-        if (plays[0][0].equals(player) && plays[1][1].equals(player) && plays[2][2].equals(player)) {
+        if ((plays[0][0].getText().equals(player) || plays[4][4].getText().equals(player)) && plays[1][1].getText().equals(player)
+                && plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player)) {
             return true;
         }
 
-        if (plays[0][2].equals(player) && plays[1][1].equals(player) && plays[2][0].equals(player)) {
+        if (plays[0][1].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][3].getText().equals(player)
+                && plays[3][4].getText().equals(player)) {
+            return true;
+        }
+
+        if (plays[0][3].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][1].getText().equals(player)
+                && plays[3][0].getText().equals(player)) {
+            return true;
+        }
+
+        if (plays[1][0].getText().equals(player) && plays[2][1].getText().equals(player) && plays[3][2].getText().equals(player)
+                && plays[4][3].getText().equals(player)) {
+            return true;
+        }
+
+        if (plays[1][4].getText().equals(player) && plays[2][3].getText().equals(player) && plays[3][2].getText().equals(player)
+                && plays[4][1].getText().equals(player)) {
             return true;
         }
         return false;
-    }
-
-    private Node getNodeFromGridPane(GridPane gridPane, int col, int row) {
-        for (Node node : gridPane.getChildren()) {
-            if (GridPane.getColumnIndex(node) == col && GridPane.getRowIndex(node) == row) {
-                return node;
-            }
-        }
-        return null;
     }
 }
