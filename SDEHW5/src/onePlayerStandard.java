@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
+import java.sql.Time;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -60,6 +61,55 @@ public class onePlayerStandard {
         }
     }
 
+    private void cpuMove() {
+//        int xRand = 0;
+//        int yRand = 0;
+//
+//        while(true) {
+//            int x = getRandomNumberInRange(1, 4);
+//            int y = getRandomNumberInRange(1, 4);
+//            if (!plays[xRand][yRand].isDisabled()) {
+//                xRand = x;
+//                yRand = y;
+//                break;
+//            }
+//        }
+//
+//        if(!plays[xRand][yRand].isDisabled()) {
+//            enter(xRand, yRand, "O");
+//            if (winner(plays, "O")) {
+//                turns.setText("O Wins!");
+//                disable();
+//                return;
+//            }
+//            plays[xRand][yRand].setDisable(true);
+//            turns.setText("Current Turn: X");
+//        }
+
+        for(int i =1; i<plays.length; i++) {
+            for(int j=0; j<plays.length; j++) {
+                if(!plays[i][j].isDisabled()) {
+                    enter(i, j, "O");
+                    if (winner(plays, "O")) {
+                        turns.setText("O Wins!");
+                        disable();
+                        return;
+                    }
+                    plays[i][j].setDisable(true);
+                    turns.setText("Current Turn: X");
+                }
+                break;
+            }
+        }
+
+        moves += 1;
+    }
+
+    private static int getRandomNumberInRange(int min, int max) {
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
+    }
+
     @FXML
     protected void handleButton(ActionEvent e) throws Exception {
         moves += 1;
@@ -71,28 +121,15 @@ public class onePlayerStandard {
             int x = GridPane.getRowIndex(clicked);
             int y = GridPane.getColumnIndex(clicked);
 
-            if (moves != 13) {
-                enter(x-1, y,"O");
-                if (winner(plays, "O")) {
-                    turns.setText("O Wins!");
-                    disable();
-                    return;
-                }
-                turns.setText("Current Turn: X");
-
-                TimeUnit.SECONDS.sleep(4);
-//                Random rand = new Random();
-//                int xRand = rand.nextInt(5);
-//                int yRand = rand.nextInt(5);
-                int xRand = 3;
-                int yRand = 2;
-                enter(xRand-1, yRand, "X");
+            if (moves != 25) {
+                enter(x-1, y,"X");
                 if (winner(plays, "X")) {
                     turns.setText("X Wins!");
                     disable();
                     return;
                 }
                 turns.setText("Current Turn: O");
+                cpuMove();
             }
             clicked.setDisable(true);
         }
@@ -102,6 +139,9 @@ public class onePlayerStandard {
         }
         else if (clicked == restart) {
             startAgain();
+        }
+        else {
+            turns.setText("It's a tie!");
         }
     }
 

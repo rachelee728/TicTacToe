@@ -89,6 +89,8 @@ public class startScreen extends Application {
 
             try {
                 standard.start(stage);
+                one.start(stage);
+                scored.start(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }
