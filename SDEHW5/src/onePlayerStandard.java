@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class onePlayerStandard {
     int moves = 0;
-
+    int count = 0;
     @FXML
     Button r0c0, r1c0, r2c0, r3c0, r4c0;
     @FXML
@@ -62,50 +62,33 @@ public class onePlayerStandard {
     }
 
     private void cpuMove() {
-//        int xRand = 0;
-//        int yRand = 0;
-//
-//        while(true) {
-//            int x = getRandomNumberInRange(1, 4);
-//            int y = getRandomNumberInRange(1, 4);
-//            if (!plays[xRand][yRand].isDisabled()) {
-//                xRand = x;
-//                yRand = y;
-//                break;
-//            }
-//        }
-//
-//        if(!plays[xRand][yRand].isDisabled()) {
-//            enter(xRand, yRand, "O");
-//            if (winner(plays, "O")) {
-//                turns.setText("O Wins!");
-//                disable();
-//                return;
-//            }
-//            plays[xRand][yRand].setDisable(true);
-//            turns.setText("Current Turn: X");
-//        }
+        int xRand = 0;
+        int yRand = 0;
 
-        for(int i =1; i<plays.length; i++) {
-            for(int j=0; j<plays.length; j++) {
-                if(!plays[i][j].isDisabled()) {
-                    enter(i, j, "O");
-                    if (winner(plays, "O")) {
-                        turns.setText("O Wins!");
-                        disable();
-                        return;
-                    }
-                    plays[i][j].setDisable(true);
-                    turns.setText("Current Turn: X");
-                }
-                break;
-            }
+        if (plays[xRand][yRand].isDisabled() == false) {
+            enter(xRand, yRand, "O");
+            return;
         }
 
+        while (plays[xRand][yRand].isDisabled() == true) {
+            xRand = randomNumberInRange(0, 4);
+            yRand = randomNumberInRange(0, 4);
+            if (plays[xRand][yRand].isDisable() == false) {
+                enter(xRand, yRand, "O");
+                if (winner(plays, "O")) {
+                    turns.setText("O Wins!");
+                    disable();
+                    return;
+                }
+                plays[xRand][yRand].setDisable(true);
+                turns.setText("Current Turn: X");
+                return;
+            }
+        }
         moves += 1;
     }
 
-    private static int getRandomNumberInRange(int min, int max) {
+    private static int randomNumberInRange(int min, int max) {
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
     }
@@ -129,9 +112,9 @@ public class onePlayerStandard {
                     return;
                 }
                 turns.setText("Current Turn: O");
-                cpuMove();
             }
             clicked.setDisable(true);
+            cpuMove();
         }
         else if (e.getSource() == quit) {
             startScreen backTostart = new startScreen();
