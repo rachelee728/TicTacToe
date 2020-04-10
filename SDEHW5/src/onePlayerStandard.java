@@ -4,6 +4,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.sql.Time;
 import java.util.Random;
@@ -44,6 +45,7 @@ public class onePlayerStandard {
     }
 
     public void startAgain() {
+        moves = 0;
         for (int i = 0; i < plays.length; i++) {
             for (int j = 0; j < plays.length; j++) {
                 plays[i][j].setDisable(false);
@@ -100,33 +102,42 @@ public class onePlayerStandard {
     protected void handleButton(ActionEvent e) throws Exception {
         moves += 1;
         Button clicked = (Button) e.getSource();
-        StandardBoard stan = new StandardBoard();
+        Stage backToStart = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        startScreen stan = new startScreen();
 
-        if (!(e.getSource() == quit) || !(e.getSource() == restart)) {
+        int x = GridPane.getRowIndex(clicked);
+        int y = GridPane.getColumnIndex(clicked);
 
-            int x = GridPane.getRowIndex(clicked);
-            int y = GridPane.getColumnIndex(clicked);
-
-            if (moves != 25) {
-                enter(x-1, y,"X");
-                if (winner(plays, "X")) {
-                    turns.setText("X Wins!");
-                    disable();
-                    return;
-                }
-                turns.setText("Current Turn: O");
+        if (clicked == quit) {
+            try {
+                stan.start(backToStart);
+            } catch (Exception o) {
+                o.printStackTrace();
             }
-            clicked.setDisable(true);
-            cpuMove();
-        }
-        else if (e.getSource() == quit) {
-            startScreen backTostart = new startScreen();
-            backTostart.start(backTostart.stage);
+
         }
         else if (clicked == restart) {
             startAgain();
         }
-        else {
+
+        if (moves <= 24) {
+            enter(x-1, y,"X");
+            if (winner(plays, "X")) {
+                turns.setText("X Wins!");
+                disable();
+                return;
+            }
+            turns.setText("Current Turn: O");
+            clicked.setDisable(true);
+            cpuMove();
+        }
+        else if(moves == 25) {
+            enter(x-1,y, "X");
+            if (winner(plays, "X")) {
+                turns.setText("X Wins!");
+                disable();
+                return;
+            }
             turns.setText("It's a tie!");
         }
     }

@@ -17,6 +17,8 @@ public class onePlayerStandardApp extends Application {
     public void start(Stage stage) throws Exception {
         root = FXMLLoader.load(getClass().getResource("/onePlayerStandard.fxml"));
         scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }
