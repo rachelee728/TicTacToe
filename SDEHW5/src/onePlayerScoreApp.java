@@ -4,8 +4,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class StandardApp extends Application {
-
+public class onePlayerScoreApp extends Application {
     Parent root;
     Scene scene;
 
@@ -13,12 +12,11 @@ public class StandardApp extends Application {
         launch(args);
     }
 
-
-    public void start(Stage stage) throws Exception{
-        root = FXMLLoader.load(getClass().getResource("/StandardBoard.fxml"));
+    @Override
+    public void start(Stage stage) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("/onePlayerScore.fxml"));
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-
 }

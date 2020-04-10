@@ -6,9 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import java.util.Random;
 
-public class onePlayerScore {
+public class ScoreBoard {
 
     int moves = 0;
     @FXML
@@ -65,88 +64,53 @@ public class onePlayerScore {
         }
     }
 
-    private void cpuMove() {
-        int xRand = 0;
-        int yRand = 0;
-
-        if (plays[xRand][yRand].isDisabled() == false) {
-            enter(xRand, yRand, "O");
-            plays[xRand][yRand].setDisable(true);
-            moves+=1;
-            return;
-        }
-
-        while (plays[xRand][yRand].isDisabled()) {
-            xRand = randomNumberInRange(0, 4);
-            yRand = randomNumberInRange(0, 4);
-            if (!plays[xRand][yRand].isDisabled()) {
-                    enter(xRand, yRand, "O");
-                    plays[xRand][yRand].setDisable(true);
-                    turns.setText("Current Turn: X");
-                    moves+=1;
-                    return;
-            }
-        }
-    }
-
-    private static int randomNumberInRange(int min, int max) {
-        Random r = new Random();
-        return r.nextInt((max - min) + 1) + min;
-    }
-
 
     @FXML
     protected void handleButton(ActionEvent e) throws Exception {
+
         moves += 1;
         Button clicked = (Button) e.getSource();
-        Stage backToStart = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        startScreen score = new startScreen();
+        Stage backToStart = (Stage)((Node)e.getSource()).getScene().getWindow();
+        startScreen stan = new startScreen();
 
         int x = GridPane.getRowIndex(clicked);
         int y = GridPane.getColumnIndex(clicked);
 
         if (clicked == quit) {
             try {
-                score.start(backToStart);
+                stan.start(backToStart);
             } catch (Exception o) {
                 o.printStackTrace();
             }
 
-        }
-        else if (clicked == restart) {
+        } else if (clicked == restart) {
             startAgain();
-        }
-        if (moves <= 24) {
+        } else {
+
+            if (moves % 2 == 0) {
+                enter(x - 1, y, "O");
+                reset("O");
+                getScore("O");
+                oScore.setText("O Score: " + O);
+                turns.setText("Current Turn: X");
+            } else {
                 enter(x - 1, y, "X");
                 reset("X");
                 getScore("X");
-                xScore.setText("X score: " + X);
+                xScore.setText("X Score: " + X);
                 turns.setText("Current Turn: O");
-                clicked.setDisable(true);
-                reset("O");
-                cpuMove();
-                getScore("O");
-                oScore.setText("O score: " + O);
-        }
-        else if(moves == 25){
-            enter(x-1,y,"X");
-            reset("X");
-            getScore("X");
-            xScore.setText("X score: "+ X);
+            }
             clicked.setDisable(true);
-            if (X > O) {
-                turns.setText("X Wins!");
-                disable();
-                return;
-            }
-            else if(O > X){
-                turns.setText("O Wins!");
-                disable();
-                return;
-            }
-            turns.setText("It's a tie!");
         }
 
+
+        if (moves == 25) {
+            if (O > X) {
+                turns.setText("O Wins!");
+            } else {
+                turns.setText("X Wins!");
+            }
+        }
     }
 
     public void reset(String player) {
@@ -213,7 +177,7 @@ public class onePlayerScore {
             else O += 3;
         }
 
-        else if ((plays[0][0].getText().equals(player) && plays[1][1].getText().equals(player) && plays[2][2].getText().equals(player))
+        else if ((plays[0][0].getText().equals(player) && plays[1][0].getText().equals(player) && plays[2][2].getText().equals(player))
                 || (plays[1][1].getText().equals(player) && plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player))
                 || (plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player) && plays[4][4].getText().equals(player))) {
             if (player.equals("X")) X += 1;
@@ -309,3 +273,4 @@ public class onePlayerScore {
         }
     }
 }
+

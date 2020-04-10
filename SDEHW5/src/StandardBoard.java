@@ -1,13 +1,17 @@
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class StandardBoard {
 
-    //Stage stage;
     int moves = 0;
 
     @FXML
@@ -20,12 +24,10 @@ public class StandardBoard {
     Button r0c3, r1c3, r2c3, r3c3, r4c3;
     @FXML
     Button r0c4, r1c4, r2c4, r3c4, r4c4;
-
-    @FXML
-    Label turns;
-
     @FXML
     Button quit, restart;
+    @FXML
+    Label turns;
 
     Button[][] plays = new Button[5][5];
 
@@ -63,9 +65,23 @@ public class StandardBoard {
     protected void handleButton(ActionEvent e) throws Exception {
         moves += 1;
         Button clicked = (Button) e.getSource();
-        StandardBoard stan = new StandardBoard();
+        Stage backToStart = (Stage)((Node)e.getSource()).getScene().getWindow();
+        startScreen stan = new startScreen();
 
-        if (!(e.getSource() == quit) || !(e.getSource() == restart)) {
+        if (clicked == quit) {
+            try {
+                stan.start(backToStart);
+            } catch (Exception o) {
+                o.printStackTrace();
+            }
+        }
+
+        else if (clicked == restart) {
+            moves = 0;
+            startAgain();
+        }
+
+        else {
 
             int x = GridPane.getRowIndex(clicked);
             int y = GridPane.getColumnIndex(clicked);
@@ -91,54 +107,54 @@ public class StandardBoard {
             }
             clicked.setDisable(true);
         }
-        else if (e.getSource() == quit) {
-            startScreen backTostart = new startScreen();
-            backTostart.start(backTostart.stage);
+
+        if (moves == 25 && !(winner(plays, "X") || winner(plays, "O"))) {
+            turns.setText("It's a Draw");
         }
-        else if (clicked == restart) {
-            startAgain();
+
+    }
+
+        public boolean winner(Button[][] plays, String player){
+            for (int i = 0; i < plays.length; i++) {
+                if ((plays[i][0].getText().equals(player) || plays[i][4].getText().equals(player)) && plays[i][1].getText().equals(player)
+                        && plays[i][2].getText().equals(player) && plays[i][3].getText().equals(player)) {
+                    return true;
+                }
+            }
+
+            for (int i = 0; i < plays.length; i++) {
+                if ((plays[0][i].getText().equals(player) || plays[4][i].getText().equals(player)) && plays[1][i].getText().equals(player)
+                        && plays[2][i].getText().equals(player) && plays[3][i].getText().equals(player)) {
+                    return true;
+                }
+            }
+
+            if ((plays[0][0].getText().equals(player) || plays[4][4].getText().equals(player)) && plays[1][1].getText().equals(player)
+                    && plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player)) {
+                return true;
+            }
+
+            if (plays[0][1].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][3].getText().equals(player)
+                    && plays[3][4].getText().equals(player)) {
+                return true;
+            }
+
+            if (plays[0][3].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][1].getText().equals(player)
+                    && plays[3][0].getText().equals(player)) {
+                return true;
+            }
+
+            if (plays[1][0].getText().equals(player) && plays[2][1].getText().equals(player) && plays[3][2].getText().equals(player)
+                    && plays[4][3].getText().equals(player)) {
+                return true;
+            }
+
+            if (plays[1][4].getText().equals(player) && plays[2][3].getText().equals(player) && plays[3][2].getText().equals(player)
+                    && plays[4][1].getText().equals(player)) {
+                return true;
+            }
+            return false;
         }
     }
 
-    public boolean winner(Button[][] plays, String player) {
-        for (int i = 0; i < plays.length; i++) {
-            if ( (plays[i][0].getText().equals(player) || plays[i][4].getText().equals(player)) && plays[i][1].getText().equals(player)
-                    && plays[i][2].getText().equals(player) && plays[i][3].getText().equals(player)) {
-                return true;
-            }
-        }
 
-        for (int i = 0; i < plays.length; i++) {
-            if ((plays[0][i].getText().equals(player) || plays[4][i].getText().equals(player)) && plays[1][i].getText().equals(player)
-                    && plays[2][i].getText().equals(player) && plays[3][i].getText().equals(player)) {
-                return true;
-            }
-        }
-
-        if ((plays[0][0].getText().equals(player) || plays[4][4].getText().equals(player)) && plays[1][1].getText().equals(player)
-                && plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player)) {
-            return true;
-        }
-
-        if (plays[0][1].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][3].getText().equals(player)
-                && plays[3][4].getText().equals(player)) {
-            return true;
-        }
-
-        if (plays[0][3].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][1].getText().equals(player)
-                && plays[3][0].getText().equals(player)) {
-            return true;
-        }
-
-        if (plays[1][0].getText().equals(player) && plays[2][1].getText().equals(player) && plays[3][2].getText().equals(player)
-                && plays[4][3].getText().equals(player)) {
-            return true;
-        }
-
-        if (plays[1][4].getText().equals(player) && plays[2][3].getText().equals(player) && plays[3][2].getText().equals(player)
-                && plays[4][1].getText().equals(player)) {
-            return true;
-        }
-        return false;
-    }
-}
