@@ -85,32 +85,22 @@ public class startScreen extends Application {
         public void handle(ActionEvent actionEvent) {
 
             StandardApp standard = new StandardApp();
+            onePlayerStandardApp oneStandard = new onePlayerStandardApp();
             ScoreApp scored = new ScoreApp();
-<<<<<<< HEAD
-            onePlayerStandardApp onepstan = new onePlayerStandardApp();
-
-            if(player1.isSelected() && standardMode.isSelected()) {
-                try{
-                    onepstan.start(stage);
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
-            else if(player1.isSelected() && scoreModeButton.isSelected()) {
-=======
             onePlayerScoreApp oneScore = new onePlayerScoreApp();
 
             if (player1.isSelected() && standardMode.isSelected()) {
-
+                try{
+                    oneStandard.start(stage);
+                } catch(Exception e){
+                    e.printStackTrace();
+                }
             } else if (player1.isSelected() && scoreModeButton.isSelected()) {
                 try{
                     oneScore.start(stage);
                 } catch(Exception e){
                     e.printStackTrace();
                 }
->>>>>>> f3f7499f827dafbc4b226dba04db4cd301821601
 
             } else if (player2.isSelected() && standardMode.isSelected()) {
                 try {
