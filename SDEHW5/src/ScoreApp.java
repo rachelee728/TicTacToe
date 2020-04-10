@@ -17,6 +17,13 @@ public class ScoreApp extends Application {
     public void start(Stage stage) throws Exception {
         root = FXMLLoader.load(getClass().getResource("/ScoreBoard.fxml"));
         scene = new Scene(root);
+<<<<<<< HEAD
     }
 
 }
+=======
+        stage.setScene(scene);
+        stage.show();
+    }
+}
+>>>>>>> 101bb9d0a7eeb6b68d39aa142734d4b260b01c51
