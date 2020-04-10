@@ -85,25 +85,28 @@ public class startScreen extends Application {
         public void handle(ActionEvent actionEvent) {
 
             StandardApp standard = new StandardApp();
-
+            ScoreApp scored = new ScoreApp();
 
             if(player1.isSelected() && standardMode.isSelected()) {
-                //stage.setScene(standard.scene);
+
+            }
+
+            else if(player1.isSelected() && scoreModeButton.isSelected()) {
+
+            }
+            else if(player2.isSelected() && standardMode.isSelected()) {
                 try {
                     standard.start(stage);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-            
-            else if(player1.isSelected() && scoreModeButton.isSelected()) {
-
-            }
-            else if(player2.isSelected() && standardMode.isSelected()) {
-
-            }
             else if(player2.isSelected() && scoreModeButton.isSelected()) {
-
+                try {
+                    scored.start(stage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             else {
                 placeHolder.setText("You didn't pick two options!");

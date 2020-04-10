@@ -71,7 +71,6 @@ public class StandardBoard {
     protected void handleButton(ActionEvent e) throws Exception {
         moves += 1;
         Button clicked = (Button) e.getSource();
-        //StandardBoard stan = new StandardBoard();
         Stage backToStart = (Stage)((Node)e.getSource()).getScene().getWindow();
         startScreen stan = new startScreen();
 
