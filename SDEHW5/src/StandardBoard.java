@@ -7,19 +7,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-<<<<<<< HEAD
-
-=======
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 public class StandardBoard {
->>>>>>> 101bb9d0a7eeb6b68d39aa142734d4b260b01c51
 
-public class StandardBoard {
     int moves = 0;
 
     @FXML
@@ -73,8 +65,6 @@ public class StandardBoard {
     protected void handleButton(ActionEvent e) throws Exception {
         moves += 1;
         Button clicked = (Button) e.getSource();
-<<<<<<< HEAD
-=======
         Stage backToStart = (Stage)((Node)e.getSource()).getScene().getWindow();
         startScreen stan = new startScreen();
 
@@ -85,7 +75,6 @@ public class StandardBoard {
                 o.printStackTrace();
             }
         }
->>>>>>> 101bb9d0a7eeb6b68d39aa142734d4b260b01c51
 
         else if (clicked == restart) {
             moves = 0;

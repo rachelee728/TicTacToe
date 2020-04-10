@@ -86,55 +86,35 @@ public class startScreen extends Application {
 
             StandardApp standard = new StandardApp();
             ScoreApp scored = new ScoreApp();
-<<<<<<< HEAD
-            try {
-                standard.start(stage);
-               scored.start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-                if (player1.isSelected() && standardMode.isSelected()) {
-                    stage.setScene(standard.scene);
-                } else if (player1.isSelected() && scoreModeButton.isSelected()) {
-                    stage.setScene(scored.scene);
-                } else if (player2.isSelected() && standardMode.isSelected()) {
-                    stage.setScene(standard.scene);
-                } else if (player2.isSelected() && scoreModeButton.isSelected()) {
-                    stage.setScene(scored.scene);
-                } else {
-                    placeHolder.setText("You didn't pick two options!");
-                    placeHolder.setTextFill(Color.RED);
-                    placeHolder.setVisible(true);
+            onePlayerScoreApp oneScore = new onePlayerScoreApp();
+
+            if (player1.isSelected() && standardMode.isSelected()) {
+
+            } else if (player1.isSelected() && scoreModeButton.isSelected()) {
+                try{
+                    oneScore.start(stage);
+                } catch(Exception e){
+                    e.printStackTrace();
                 }
-=======
 
-            if(player1.isSelected() && standardMode.isSelected()) {
-
-            }
-
-            else if(player1.isSelected() && scoreModeButton.isSelected()) {
-
-            }
-            else if(player2.isSelected() && standardMode.isSelected()) {
+            } else if (player2.isSelected() && standardMode.isSelected()) {
                 try {
                     standard.start(stage);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(player2.isSelected() && scoreModeButton.isSelected()) {
+            } else if (player2.isSelected() && scoreModeButton.isSelected()) {
                 try {
                     scored.start(stage);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else {
+            } else {
                 placeHolder.setText("You didn't pick two options!");
                 placeHolder.setTextFill(Color.RED);
                 placeHolder.setVisible(true);
->>>>>>> 101bb9d0a7eeb6b68d39aa142734d4b260b01c51
             }
         }
     }
+}
 
