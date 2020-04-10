@@ -47,9 +47,9 @@
         <Button fx:id="r3c4" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="65.0" prefWidth="124.0" text="" GridPane.columnIndex="4" GridPane.rowIndex="4" />
         <Button fx:id="r4c4" alignment="CENTER" mnemonicParsing="false" onAction="#handleButton" prefHeight="75.0" prefWidth="120.0" text="" GridPane.columnIndex="4" GridPane.rowIndex="5" />
         <Label fx:id="turns" text="Current Turn : X" GridPane.columnIndex="2" />
-        <Label fx:id="xScore" text = "X Score :" GridPane.columnIndex= "0"/>
-        <Label fx:id="oScore" text = "O Score :" GridPane.columnIndex= "4"/>
-        <Button fx:id="quit" mnemonicParsing="false" text="Quit" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-        <Button fx:id="restart" mnemonicParsing="false" text="Restart" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+        <Label fx:id="xScore" text = "X Score : -1" GridPane.columnIndex= "0"/>
+        <Label fx:id="oScore" text = "O Score : 0" GridPane.columnIndex= "4"/>
+        <Button fx:id="quit" mnemonicParsing="false" onAction="#handleButton" text="Quit" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <Button fx:id="restart" mnemonicParsing="false" onAction="#handleButton" text="Restart" GridPane.columnIndex="3" GridPane.rowIndex="6" />
     </children>
 </GridPane>

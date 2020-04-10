@@ -1,8 +1,10 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 
 public class ScoreBoard {
@@ -56,6 +58,9 @@ public class ScoreBoard {
                 plays[i][j].setDisable(false);
                 plays[i][j].setText("");
                 turns.setText("Current Turn: X");
+                xScore.setText("X Score: -1");
+                oScore.setText("O Score: 0");
+                moves = 0;
             }
         }
     }
@@ -74,31 +79,40 @@ public class ScoreBoard {
 
         moves += 1;
         Button clicked = (Button) e.getSource();
+        Stage backToStart = (Stage)((Node)e.getSource()).getScene().getWindow();
+        startScreen stan = new startScreen();
 
         int x = GridPane.getRowIndex(clicked);
         int y = GridPane.getColumnIndex(clicked);
 
         if (clicked == quit) {
-            startScreen backToStart = new startScreen();
-            backToStart.start(backToStart.stage);
+            try {
+                stan.start(backToStart);
+            } catch (Exception o) {
+                o.printStackTrace();
+            }
         } else if (clicked == restart) {
             startAgain();
         } else {
 
             if (moves % 2 == 0) {
                 enter(x - 1, y, "O");
-                checkRow(x-1, y, "O");
-                checkColumn(x-1, y, "O");
-                checkDiag(x-1, y, "O");
-                checkAntiDiag(x-1, y, "O");
+                reset("O");
+                getScore("O");
+//                checkRow(x-1, y, "O");
+//                checkColumn(x-1, y, "O");
+//                checkDiag(x-1, y, "O");
+//                checkAntiDiag(x-1, y, "O");
                 oScore.setText("O Score: " + O);
                 turns.setText("Current Turn: X");
             } else {
                 enter(x - 1, y, "X");
-                checkRow(x-1, y, "X");
-                checkColumn(x-1, y, "X");
-                checkDiag(x-1, y, "X");
-                checkAntiDiag(x-1, y, "X");
+                reset("X");
+                getScore("X");
+//                checkRow(x-1, y, "X");
+//                checkColumn(x-1, y, "X");
+//                checkDiag(x-1, y, "X");
+//                checkAntiDiag(x-1, y, "X");
                 xScore.setText("X Score: " + X);
                 turns.setText("Current Turn: O");
             }
@@ -109,86 +123,87 @@ public class ScoreBoard {
         if (moves == 25) {
             if (O > X) {
                 turns.setText("O Wins!");
-                disable();
+                //disable();
             } else {
                 turns.setText("X Wins!");
-                disable();
+                //disable();
             }
         }
     }
 
-    public void checkRow(int x, int y, String player) {
-            if (plays[x][0].getText().equals(player) && plays[x][1].getText().equals(player) && plays[x][2].getText().equals(player)
-                    && plays[x][3].getText().equals(player) && plays[x][4].getText().equals(player)) {
+    public void reset(String player) {
+        if (player.equals("X")) X = -1;
+        else O = 0;
+    }
+
+    public void getScore(String player) {
+
+        //checking rows
+        for (int i = 0; i < plays.length; i++) {
+            if (plays[i][0].getText().equals(player) && plays[i][1].getText().equals(player) && plays[i][2].getText().equals(player)
+                    && plays[i][3].getText().equals(player) && plays[i][4].getText().equals(player)) {
                 if (player.equals("X")) X += 10;
                 else O += 10;
             }
 
-            else if ((plays[x][0].getText().equals(player) || plays[x][4].getText().equals(player)) && plays[x][1].getText().equals(player)
-                    && plays[x][2].getText().equals(player) && plays[x][3].getText().equals(player)) {
+            else if ((plays[i][0].getText().equals(player) || plays[i][4].getText().equals(player)) && plays[i][1].getText().equals(player)
+                    && plays[i][2].getText().equals(player) && plays[i][3].getText().equals(player)) {
                 if (player.equals("X")) X += 3;
                 else O += 3;
             }
 
-            else if ((plays[x][0].getText().equals(player) && plays[x][1].getText().equals(player) && plays[x][2].getText().equals(player))
-                    || (plays[x][1].getText().equals(player) && plays[x][2].getText().equals(player) && plays[x][3].getText().equals(player))
-                    || (plays[x][2].getText().equals(player) && plays[x][3].getText().equals(player) && plays[x][4].getText().equals(player))) {
+            else if ((plays[i][0].getText().equals(player) && plays[i][1].getText().equals(player) && plays[i][2].getText().equals(player))
+                    || (plays[i][1].getText().equals(player) && plays[i][2].getText().equals(player) && plays[i][3].getText().equals(player))
+                    || (plays[i][2].getText().equals(player) && plays[i][3].getText().equals(player) && plays[i][4].getText().equals(player))) {
                 if (player.equals("X")) X += 1;
                 else O += 1;
             }
-    }
+        }
 
-    public void checkColumn(int x, int y, String player) {
-        if (plays[0][y].getText().equals(player) && plays[1][y].getText().equals(player) && plays[2][y].getText().equals(player)
-                && plays[3][y].getText().equals(player) && plays[4][y].getText().equals(player)) {
+        //checking columns
+        for (int i = 0; i < plays.length; i++) {
+            if (plays[0][i].getText().equals(player) && plays[1][i].getText().equals(player) && plays[2][i].getText().equals(player)
+                    && plays[3][i].getText().equals(player) && plays[4][i].getText().equals(player)) {
+                if (player.equals("X")) X += 10;
+                else O += 10;
+            }
+
+            else if ((plays[0][i].getText().equals(player) || plays[4][i].getText().equals(player)) && plays[1][i].getText().equals(player)
+                    && plays[2][i].getText().equals(player) && plays[3][i].getText().equals(player)) {
+                if (player.equals("X")) X += 3;
+                else O += 3;
+            }
+
+            else if ((plays[0][i].getText().equals(player) && plays[1][i].getText().equals(player) && plays[2][i].getText().equals(player))
+                    || (plays[1][i].getText().equals(player) && plays[2][i].getText().equals(player) && plays[3][i].getText().equals(player))
+                    || (plays[2][i].getText().equals(player) && plays[3][i].getText().equals(player) && plays[4][i].getText().equals(player))) {
+                if (player.equals("X")) X += 1;
+                else O += 1;
+            }
+        }
+
+        //checking diagonals
+        if (plays[0][0].getText().equals(player) && plays[1][1].getText().equals(player) && plays[2][2].getText().equals(player)
+                && plays[3][3].getText().equals(player) && plays[4][4].getText().equals(player)) {
             if (player.equals("X")) X += 10;
             else O += 10;
         }
 
-        else if ((plays[0][y].getText().equals(player) || plays[4][y].getText().equals(player)) && plays[1][y].getText().equals(player)
-                && plays[2][y].getText().equals(player) && plays[3][y].getText().equals(player)) {
+        else if ((plays[0][0].getText().equals(player) || plays[4][4].getText().equals(player)) && plays[1][1].getText().equals(player)
+                && plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player)) {
             if (player.equals("X")) X += 3;
             else O += 3;
         }
 
-        else if ((plays[0][y].getText().equals(player) && plays[1][y].getText().equals(player) && plays[2][y].getText().equals(player))
-                || (plays[1][y].getText().equals(player) && plays[2][y].getText().equals(player) && plays[3][y].getText().equals(player))
-                || (plays[2][y].getText().equals(player) && plays[3][y].getText().equals(player) && plays[4][y].getText().equals(player))) {
+        else if ((plays[0][0].getText().equals(player) && plays[1][0].getText().equals(player) && plays[2][2].getText().equals(player))
+                || (plays[1][1].getText().equals(player) && plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player))
+                || (plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player) && plays[4][4].getText().equals(player))) {
             if (player.equals("X")) X += 1;
             else O += 1;
         }
-    }
 
-    public void checkDiag(int x, int y, String player) {
-        if (x == y) {
-            if (plays[0][0].getText().equals(player) && plays[1][1].getText().equals(player) && plays[2][2].getText().equals(player)
-                    && plays[3][3].getText().equals(player) && plays[4][4].getText().equals(player)) {
-                if (player.equals("X")) X += 10;
-                else O += 10;
-            }
-
-            else if ((plays[0][0].getText().equals(player) || plays[4][4].getText().equals(player)) && plays[1][1].getText().equals(player)
-                    && plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player)) {
-                if (player.equals("X")) X += 3;
-                else O += 3;
-            }
-
-            else if ((plays[0][0].getText().equals(player) && plays[1][0].getText().equals(player) && plays[2][2].getText().equals(player))
-                    || (plays[1][1].getText().equals(player) && plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player))
-                    || (plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player) && plays[4][4].getText().equals(player))) {
-                if (player.equals("X")) X += 1;
-                else O += 1;
-            }
-        }
-
-        else if (plays[0][1].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][3].getText().equals(player)
+        if (plays[0][1].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][3].getText().equals(player)
                 && plays[3][4].getText().equals(player)) {
-            if (player.equals("X")) X += 3;
-            else O += 3;
-        }
-
-        else if (plays[1][0].getText().equals(player)  && plays[2][1].getText().equals(player) && plays[3][2].getText().equals(player)
-                && plays[4][3].getText().equals(player)) {
             if (player.equals("X")) X += 3;
             else O += 3;
         }
@@ -199,53 +214,50 @@ public class ScoreBoard {
             else O += 1;
         }
 
+        if (plays[1][0].getText().equals(player)  && plays[2][1].getText().equals(player) && plays[3][2].getText().equals(player)
+                && plays[4][3].getText().equals(player)) {
+            if (player.equals("X")) X += 3;
+            else O += 3;
+        }
+
         else if ((plays[1][0].getText().equals(player) || plays[4][3].getText().equals(player)) && plays[2][1].getText().equals(player)
                 && plays[3][2].getText().equals(player)) {
             if (player.equals("X")) X += 1;
             else O += 1;
         }
 
-        else if (plays[2][0].getText().equals(player)  && plays[3][1].getText().equals(player) && plays[4][2].getText().equals(player)) {
+        if (plays[2][0].getText().equals(player)  && plays[3][1].getText().equals(player) && plays[4][2].getText().equals(player)) {
             if (player.equals("X")) X += 1;
             else O += 1;
         }
 
-        else if (plays[0][2].getText().equals(player)  && plays[1][3].getText().equals(player) && plays[2][4].getText().equals(player)) {
+        if (plays[0][2].getText().equals(player)  && plays[1][3].getText().equals(player) && plays[2][4].getText().equals(player)) {
             if (player.equals("X")) X += 1;
             else O += 1;
         }
-    }
 
-    public void checkAntiDiag(int x, int y, String player) {
-        if ((x + y) == 4) {
-            if (plays[0][4].getText().equals(player) && plays[1][3].getText().equals(player) && plays[2][2].getText().equals(player)
-                    && plays[3][1].getText().equals(player) && plays[4][0].getText().equals(player)) {
-                if (player.equals("X")) X += 10;
-                else O += 10;
-            }
-
-            else if ((plays[0][4].getText().equals(player) || plays[4][0].getText().equals(player)) && plays[1][3].getText().equals(player)
-                    && plays[2][2].getText().equals(player) && plays[3][1].getText().equals(player)) {
-                if (player.equals("X")) X += 3;
-                else O += 3;
-            }
-
-            else if ((plays[0][0].getText().equals(player) && plays[1][3].getText().equals(player) && plays[2][2].getText().equals(player))
-                    || (plays[1][3].getText().equals(player) && plays[2][2].getText().equals(player) && plays[3][1].getText().equals(player))
-                    || (plays[2][2].getText().equals(player) && plays[3][1].getText().equals(player) && plays[4][0].getText().equals(player))) {
-                if (player.equals("X")) X += 1;
-                else O += 1;
-            }
+        //checking antidiagnonals
+        if (plays[0][4].getText().equals(player) && plays[1][3].getText().equals(player) && plays[2][2].getText().equals(player)
+                && plays[3][1].getText().equals(player) && plays[4][0].getText().equals(player)) {
+            if (player.equals("X")) X += 10;
+            else O += 10;
         }
 
-        else if (plays[0][3].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][1].getText().equals(player)
-                && plays[3][0].getText().equals(player)) {
+        else if ((plays[0][4].getText().equals(player) || plays[4][0].getText().equals(player)) && plays[1][3].getText().equals(player)
+                && plays[2][2].getText().equals(player) && plays[3][1].getText().equals(player)) {
             if (player.equals("X")) X += 3;
             else O += 3;
         }
 
-        else if (plays[1][4].getText().equals(player)  && plays[2][3].getText().equals(player) && plays[3][2].getText().equals(player)
-                && plays[4][1].getText().equals(player)) {
+        else if ((plays[0][0].getText().equals(player) && plays[1][3].getText().equals(player) && plays[2][2].getText().equals(player))
+                || (plays[1][3].getText().equals(player) && plays[2][2].getText().equals(player) && plays[3][1].getText().equals(player))
+                || (plays[2][2].getText().equals(player) && plays[3][1].getText().equals(player) && plays[4][0].getText().equals(player))) {
+            if (player.equals("X")) X += 1;
+            else O += 1;
+        }
+
+        if (plays[0][3].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][1].getText().equals(player)
+                && plays[3][0].getText().equals(player)) {
             if (player.equals("X")) X += 3;
             else O += 3;
         }
@@ -256,18 +268,24 @@ public class ScoreBoard {
             else O += 1;
         }
 
+        if (plays[1][4].getText().equals(player)  && plays[2][3].getText().equals(player) && plays[3][2].getText().equals(player)
+                && plays[4][1].getText().equals(player)) {
+            if (player.equals("X")) X += 3;
+            else O += 3;
+        }
+
         else if ((plays[1][4].getText().equals(player) || plays[4][1].getText().equals(player)) && plays[2][3].getText().equals(player)
                 && plays[3][2].getText().equals(player)) {
             if (player.equals("X")) X += 1;
             else O += 1;
         }
 
-        else if (plays[0][2].getText().equals(player)  && plays[1][1].getText().equals(player) && plays[2][0].getText().equals(player)) {
+        if (plays[0][2].getText().equals(player)  && plays[1][1].getText().equals(player) && plays[2][0].getText().equals(player)) {
             if (player.equals("X")) X += 1;
             else O += 1;
         }
 
-        else if (plays[2][4].getText().equals(player)  && plays[3][3].getText().equals(player) && plays[4][2].getText().equals(player)) {
+        if (plays[2][4].getText().equals(player)  && plays[3][3].getText().equals(player) && plays[4][2].getText().equals(player)) {
             if (player.equals("X")) X += 1;
             else O += 1;
         }
