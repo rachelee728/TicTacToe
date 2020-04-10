@@ -67,6 +67,8 @@ public class onePlayerStandard {
 
         if (plays[xRand][yRand].isDisabled() == false) {
             enter(xRand, yRand, "O");
+            plays[xRand][yRand].setDisable(true);
+            moves += 1;
             return;
         }
 
@@ -78,14 +80,15 @@ public class onePlayerStandard {
                 if (winner(plays, "O")) {
                     turns.setText("O Wins!");
                     disable();
+                    moves += 1;
                     return;
                 }
                 plays[xRand][yRand].setDisable(true);
                 turns.setText("Current Turn: X");
+                moves += 1;
                 return;
             }
         }
-        moves += 1;
     }
 
     private static int randomNumberInRange(int min, int max) {
