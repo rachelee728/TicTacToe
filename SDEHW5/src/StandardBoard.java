@@ -1,9 +1,17 @@
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class StandardBoard {
 
@@ -63,9 +71,23 @@ public class StandardBoard {
     protected void handleButton(ActionEvent e) throws Exception {
         moves += 1;
         Button clicked = (Button) e.getSource();
-        StandardBoard stan = new StandardBoard();
+        Stage backToStart = (Stage)((Node)e.getSource()).getScene().getWindow();
+        startScreen stan = new startScreen();
 
-        if (!(e.getSource() == quit) || !(e.getSource() == restart)) {
+        if (clicked == quit) {
+            try {
+                stan.start(backToStart);
+            } catch (Exception o) {
+                o.printStackTrace();
+            }
+        }
+
+        else if (clicked == restart) {
+            moves = 0;
+            startAgain();
+        }
+
+        else {
 
             int x = GridPane.getRowIndex(clicked);
             int y = GridPane.getColumnIndex(clicked);
@@ -91,12 +113,9 @@ public class StandardBoard {
             }
             clicked.setDisable(true);
         }
-        else if (e.getSource() == quit) {
-            startScreen backTostart = new startScreen();
-            backTostart.start(backTostart.stage);
-        }
-        else if (clicked == restart) {
-            startAgain();
+
+        if (moves == 25 && !(winner(plays, "X") || winner(plays, "O"))) {
+            turns.setText("It's a Draw");
         }
     }
 

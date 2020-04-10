@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -21,7 +20,9 @@ public class startScreen extends Application {
     RadioButton player2;
     RadioButton standardMode;
     RadioButton scoreModeButton;
+    Button startButton;
     Stage stage;
+    GridPane root;
 
     public static void main(String[] args){
         launch(args);
@@ -48,10 +49,10 @@ public class startScreen extends Application {
         standardMode = new RadioButton("Standard mode"); //win when get 4 in a row
         scoreModeButton = new RadioButton("Score mode"); //win when the board is all full--compare b/t players
 
-        Button startButton = new Button("Start");
+        startButton = new Button("Start");
 
         // create scene to display widgets
-        GridPane root = new GridPane();
+        root = new GridPane();
         root.setHgap(10);
         root.setVgap(10);
 
@@ -84,23 +85,34 @@ public class startScreen extends Application {
         public void handle(ActionEvent actionEvent) {
 
             StandardApp standard = new StandardApp();
-            try {
-                standard.start(stage);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            ScoreApp scored = new ScoreApp();
+            onePlayerStandardApp onepstan = new onePlayerStandardApp();
 
             if(player1.isSelected() && standardMode.isSelected()) {
-                stage.setScene(standard.scene);
+                try{
+                    onepstan.start(stage);
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+
             else if(player1.isSelected() && scoreModeButton.isSelected()) {
 
             }
             else if(player2.isSelected() && standardMode.isSelected()) {
-
+                try {
+                    standard.start(stage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             else if(player2.isSelected() && scoreModeButton.isSelected()) {
-
+                try {
+                    scored.start(stage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             else {
                 placeHolder.setText("You didn't pick two options!");

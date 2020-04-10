@@ -4,7 +4,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class StandardApp extends Application {
+public class onePlayerStandardApp extends Application {
 
     Parent root;
     Scene scene;
@@ -13,9 +13,9 @@ public class StandardApp extends Application {
         launch(args);
     }
 
-
-    public void start(Stage stage) throws Exception{
-        root = FXMLLoader.load(getClass().getResource("/StandardBoard.fxml"));
+    @Override
+    public void start(Stage stage) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("/onePlayerStandard.fxml"));
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
