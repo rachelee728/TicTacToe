@@ -195,7 +195,7 @@ public class ScoreBoard {
             else O += 3;
         }
 
-        else if ((plays[0][0].getText().equals(player) && plays[1][0].getText().equals(player) && plays[2][2].getText().equals(player))
+        else if ((plays[0][0].getText().equals(player) && plays[1][1].getText().equals(player) && plays[2][2].getText().equals(player))
                 || (plays[1][1].getText().equals(player) && plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player))
                 || (plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player) && plays[4][4].getText().equals(player))) {
             if (player.equals("X")) X += 1;

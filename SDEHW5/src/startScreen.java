@@ -86,9 +86,15 @@ public class startScreen extends Application {
 
             StandardApp standard = new StandardApp();
             ScoreApp scored = new ScoreApp();
+            onePlayerStandardApp onepstan = new onePlayerStandardApp();
 
             if(player1.isSelected() && standardMode.isSelected()) {
-
+                try{
+                    onepstan.start(stage);
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
             else if(player1.isSelected() && scoreModeButton.isSelected()) {
