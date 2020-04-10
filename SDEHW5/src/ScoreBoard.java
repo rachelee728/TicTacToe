@@ -28,15 +28,6 @@ public class ScoreBoard {
 
     Button[][] plays = new Button[5][5];
 
-    int[] xRow = new int[5];
-    int[] oRow = new int[5];
-    int[] xColumn = new int[5];
-    int[] oColumn = new int[5];
-    int xDiag = 0;
-    int oDiag = 0;
-    int xAntiDiag = 0;
-    int oAntiDiag = 0;
-
     int X = -1;
     int O = 0;
 
@@ -91,6 +82,7 @@ public class ScoreBoard {
             } catch (Exception o) {
                 o.printStackTrace();
             }
+
         } else if (clicked == restart) {
             startAgain();
         } else {
@@ -99,20 +91,12 @@ public class ScoreBoard {
                 enter(x - 1, y, "O");
                 reset("O");
                 getScore("O");
-//                checkRow(x-1, y, "O");
-//                checkColumn(x-1, y, "O");
-//                checkDiag(x-1, y, "O");
-//                checkAntiDiag(x-1, y, "O");
                 oScore.setText("O Score: " + O);
                 turns.setText("Current Turn: X");
             } else {
                 enter(x - 1, y, "X");
                 reset("X");
                 getScore("X");
-//                checkRow(x-1, y, "X");
-//                checkColumn(x-1, y, "X");
-//                checkDiag(x-1, y, "X");
-//                checkAntiDiag(x-1, y, "X");
                 xScore.setText("X Score: " + X);
                 turns.setText("Current Turn: O");
             }
@@ -123,10 +107,8 @@ public class ScoreBoard {
         if (moves == 25) {
             if (O > X) {
                 turns.setText("O Wins!");
-                //disable();
             } else {
                 turns.setText("X Wins!");
-                //disable();
             }
         }
     }
@@ -291,3 +273,4 @@ public class ScoreBoard {
         }
     }
 }
+

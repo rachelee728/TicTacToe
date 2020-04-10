@@ -10,12 +10,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 public class StandardBoard {
 
-    //Stage stage;
     int moves = 0;
 
     @FXML
@@ -28,12 +24,10 @@ public class StandardBoard {
     Button r0c3, r1c3, r2c3, r3c3, r4c3;
     @FXML
     Button r0c4, r1c4, r2c4, r3c4, r4c4;
-
-    @FXML
-    Label turns;
-
     @FXML
     Button quit, restart;
+    @FXML
+    Label turns;
 
     Button[][] plays = new Button[5][5];
 
@@ -117,47 +111,50 @@ public class StandardBoard {
         if (moves == 25 && !(winner(plays, "X") || winner(plays, "O"))) {
             turns.setText("It's a Draw");
         }
+
     }
 
-    public boolean winner(Button[][] plays, String player) {
-        for (int i = 0; i < plays.length; i++) {
-            if ( (plays[i][0].getText().equals(player) || plays[i][4].getText().equals(player)) && plays[i][1].getText().equals(player)
-                    && plays[i][2].getText().equals(player) && plays[i][3].getText().equals(player)) {
+        public boolean winner(Button[][] plays, String player){
+            for (int i = 0; i < plays.length; i++) {
+                if ((plays[i][0].getText().equals(player) || plays[i][4].getText().equals(player)) && plays[i][1].getText().equals(player)
+                        && plays[i][2].getText().equals(player) && plays[i][3].getText().equals(player)) {
+                    return true;
+                }
+            }
+
+            for (int i = 0; i < plays.length; i++) {
+                if ((plays[0][i].getText().equals(player) || plays[4][i].getText().equals(player)) && plays[1][i].getText().equals(player)
+                        && plays[2][i].getText().equals(player) && plays[3][i].getText().equals(player)) {
+                    return true;
+                }
+            }
+
+            if ((plays[0][0].getText().equals(player) || plays[4][4].getText().equals(player)) && plays[1][1].getText().equals(player)
+                    && plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player)) {
                 return true;
             }
-        }
 
-        for (int i = 0; i < plays.length; i++) {
-            if ((plays[0][i].getText().equals(player) || plays[4][i].getText().equals(player)) && plays[1][i].getText().equals(player)
-                    && plays[2][i].getText().equals(player) && plays[3][i].getText().equals(player)) {
+            if (plays[0][1].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][3].getText().equals(player)
+                    && plays[3][4].getText().equals(player)) {
                 return true;
             }
-        }
 
-        if ((plays[0][0].getText().equals(player) || plays[4][4].getText().equals(player)) && plays[1][1].getText().equals(player)
-                && plays[2][2].getText().equals(player) && plays[3][3].getText().equals(player)) {
-            return true;
-        }
+            if (plays[0][3].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][1].getText().equals(player)
+                    && plays[3][0].getText().equals(player)) {
+                return true;
+            }
 
-        if (plays[0][1].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][3].getText().equals(player)
-                && plays[3][4].getText().equals(player)) {
-            return true;
-        }
+            if (plays[1][0].getText().equals(player) && plays[2][1].getText().equals(player) && plays[3][2].getText().equals(player)
+                    && plays[4][3].getText().equals(player)) {
+                return true;
+            }
 
-        if (plays[0][3].getText().equals(player) && plays[1][2].getText().equals(player) && plays[2][1].getText().equals(player)
-                && plays[3][0].getText().equals(player)) {
-            return true;
+            if (plays[1][4].getText().equals(player) && plays[2][3].getText().equals(player) && plays[3][2].getText().equals(player)
+                    && plays[4][1].getText().equals(player)) {
+                return true;
+            }
+            return false;
         }
-
-        if (plays[1][0].getText().equals(player) && plays[2][1].getText().equals(player) && plays[3][2].getText().equals(player)
-                && plays[4][3].getText().equals(player)) {
-            return true;
-        }
-
-        if (plays[1][4].getText().equals(player) && plays[2][3].getText().equals(player) && plays[3][2].getText().equals(player)
-                && plays[4][1].getText().equals(player)) {
-            return true;
-        }
-        return false;
     }
-}
+
+

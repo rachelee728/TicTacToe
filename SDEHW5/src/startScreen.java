@@ -24,7 +24,7 @@ public class startScreen extends Application {
     Stage stage;
     GridPane root;
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         launch(args);
     }
 
@@ -56,9 +56,9 @@ public class startScreen extends Application {
         root.setHgap(10);
         root.setVgap(10);
 
-        root.add(label1,0,0);
-        root.add(playerMode,0,2);
-        root.add(scoreMode,3,2);
+        root.add(label1, 0, 0);
+        root.add(playerMode, 0, 2);
+        root.add(scoreMode, 3, 2);
 
         // add radio button to group
         player1.setToggleGroup(playerModes);
@@ -67,12 +67,12 @@ public class startScreen extends Application {
         scoreModeButton.setToggleGroup(scoreModes);
 
         // display widgets
-        root.add(player1,0,3);
-        root.add(player2,0,5);
+        root.add(player1, 0, 3);
+        root.add(player2, 0, 5);
         root.add(placeHolder, 0, 6);
-        root.add(standardMode,3,3);
-        root.add(scoreModeButton,3,5);
-        root.add(startButton,1,7);
+        root.add(standardMode, 3, 3);
+        root.add(scoreModeButton, 3, 5);
+        root.add(startButton, 1, 7);
 
         startButton.setOnAction(new ButtonHandler());
 
@@ -86,6 +86,7 @@ public class startScreen extends Application {
 
             StandardApp standard = new StandardApp();
             ScoreApp scored = new ScoreApp();
+<<<<<<< HEAD
             onePlayerStandardApp onepstan = new onePlayerStandardApp();
 
             if(player1.isSelected() && standardMode.isSelected()) {
@@ -98,23 +99,32 @@ public class startScreen extends Application {
             }
 
             else if(player1.isSelected() && scoreModeButton.isSelected()) {
+=======
+            onePlayerScoreApp oneScore = new onePlayerScoreApp();
 
-            }
-            else if(player2.isSelected() && standardMode.isSelected()) {
+            if (player1.isSelected() && standardMode.isSelected()) {
+
+            } else if (player1.isSelected() && scoreModeButton.isSelected()) {
+                try{
+                    oneScore.start(stage);
+                } catch(Exception e){
+                    e.printStackTrace();
+                }
+>>>>>>> f3f7499f827dafbc4b226dba04db4cd301821601
+
+            } else if (player2.isSelected() && standardMode.isSelected()) {
                 try {
                     standard.start(stage);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(player2.isSelected() && scoreModeButton.isSelected()) {
+            } else if (player2.isSelected() && scoreModeButton.isSelected()) {
                 try {
                     scored.start(stage);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else {
+            } else {
                 placeHolder.setText("You didn't pick two options!");
                 placeHolder.setTextFill(Color.RED);
                 placeHolder.setVisible(true);
@@ -122,3 +132,4 @@ public class startScreen extends Application {
         }
     }
 }
+
