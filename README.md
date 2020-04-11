@@ -1,5 +1,5 @@
 #TicTacToe
-By Rachel Lee, Dwij Ghandi, Kevin Luk
+By Rachel Lee, Dwij Gandhi, Kevin Luk
 @rl3bcw
 @dg2tj
 @khl7wh
