@@ -1,25 +1,22 @@
 #TicTacToe
+By Rachel Lee, Dwij Ghandi, Kevin Luk
+@rl3bcw
+@dg2tj
+@khl7wh
 
-1. How to make a local branch::
+VM options: The VM options that are needed in order for the program to run:
 
-	git checkout -b [name of your new branch, no bracket]
+	--module-path %PATH_TO_YOUR_FX_LIB_FOLDER% --add-modules javafx.controls,javafx.fxml
 
-2. How to add unchanged files to the branch::
+	replace %PATH_TO_YOUR_FX_LIB_FOLDER% with the path your javafx lib folder
 
-	git add .
+Once running, the program should prompt the user to the start screen of the game.
 
-3. ALWAYS CHECK THE STATUS OF YOUR FILES::	
+JavaFX 14:
+	This library was used in order to create the game using scenes, buttons, and other functionalities.
+	Download link: https://gluonhq.com/products/javafx/
+	Import folder into project:
+		lib
 
- 	git status
-	--red will show unadded files, green will show added files
-
-4. How to commit a file to push::
-
-	git commit -m "your message"
-
-5. How to push your code to the local file, making a pull request::
-
-	git push origin master
-	OR git push
-
-6. A pull request should show up on Github
+startScreen.java:
+Main class used to prompt the user to prompt the user to the start screen of the game, allowing them to choose their desired player mode and score mode before pressing the Start button to start the game.
